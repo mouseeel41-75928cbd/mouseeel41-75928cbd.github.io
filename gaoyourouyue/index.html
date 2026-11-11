@@ -1,0 +1,1374 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高莜柔阅读 - 都市言情连载书单与追更指南</title>
+<meta name="description" content="高莜柔阅读聚合都市言情连载书单、番外补完顺序与角色关系梳理，收录《迟到的第十一封》《雾港三年》等条目，含更新进度、读者评论与章节避雷提示，适合追更读者按类型挑书。">
+<meta name="keywords" content="高莜柔阅读">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%237a4a6b'/%3E%3Cpath d='M16 20h14a6 6 0 0 1 6 6v22a5 5 0 0 0-5-5H16z' fill='%23f6e9f1'/%3E%3Cpath d='M48 20H34a6 6 0 0 0-6 6v22a5 5 0 0 1 5-5h15z' fill='%23e8c7da'/%3E%3C/svg%3E">
+<style>
+:root{
+  --main:#7a4a6b;
+  --main-light:#a8759a;
+  --main-soft:#f3e6ef;
+  --main-deep:#55304a;
+  --accent:#c98a4b;
+  --accent-soft:#faf0e2;
+  --bg:#fbf8fa;
+  --panel:#ffffff;
+  --text-1:#241b22;
+  --text-2:#5b4d57;
+  --text-3:#8d7f88;
+  --line:#e7dde4;
+  --radius-card:14px;
+  --radius-btn:8px;
+  --radius-tag:5px;
+  --radius-banner:18px;
+  --shadow:0 2px 10px rgba(85,48,74,.07);
+  --shadow-hover:0 8px 22px rgba(85,48,74,.14);
+  --gap:26px;
+  --ann-h:42px;
+  --head-h:66px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--ann-h) + var(--head-h) + 12px);}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--text-1);
+  line-height:1.75;
+  font-size:15px;
+}
+a{color:inherit;text-decoration:none;}
+img{display:block;max-width:100%;}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700;}
+p{margin:0 0 12px;}
+ul,ol{margin:0 0 12px;padding-left:1.2em;}
+li{margin-bottom:6px;}
+button{font-family:inherit;}
+
+/* ---------- 吸顶公告条 ---------- */
+.annbar{
+  position:sticky;top:0;z-index:60;
+  height:var(--ann-h);
+  background:linear-gradient(90deg,var(--main-deep),var(--main));
+  color:#f7ecf3;
+  font-size:13px;
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+.annbar .ann-inner{
+  width:100%;max-width:1360px;margin:0 auto;padding:0 18px;
+  display:flex;align-items:center;gap:16px;
+}
+.ann-brand{
+  font-weight:700;letter-spacing:.5px;white-space:nowrap;
+  background:rgba(255,255,255,.14);padding:2px 10px;border-radius:20px;font-size:12.5px;
+}
+.ann-move{display:flex;gap:26px;overflow:hidden;white-space:nowrap;flex:1;}
+.ann-move span{display:inline-flex;align-items:center;gap:6px;}
+.ann-move b{color:#ffd9a8;font-weight:600;}
+
+/* ---------- 吸顶页头 ---------- */
+.site-head{
+  position:sticky;top:var(--ann-h);z-index:55;
+  height:var(--head-h);
+  background:rgba(251,248,250,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  max-width:1360px;margin:0 auto;height:100%;padding:0 18px;
+  display:flex;align-items:center;gap:22px;
+}
+.logo{display:flex;align-items:center;gap:9px;flex-shrink:0;}
+.logo svg{width:34px;height:34px;}
+.logo-text{font-size:18px;font-weight:800;letter-spacing:.5px;color:var(--main-deep);white-space:nowrap;}
+.head-nav{display:flex;gap:4px;flex:1;overflow-x:auto;scrollbar-width:none;}
+.head-nav::-webkit-scrollbar{display:none;}
+.head-nav a{
+  padding:6px 11px;border-radius:var(--radius-btn);font-size:14px;color:var(--text-2);white-space:nowrap;
+  transition:background .18s,color .18s;
+}
+.head-nav a:hover,.head-nav a:focus-visible{background:var(--main-soft);color:var(--main-deep);outline:none;}
+.head-nav a.active{background:var(--main);color:#fff;}
+.head-actions{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.search-box{position:relative;}
+.search-box input{
+  width:170px;padding:7px 12px 7px 30px;border:1px solid var(--line);border-radius:20px;
+  font-size:13px;background:var(--panel);color:var(--text-1);outline:none;transition:border .18s,width .2s;
+}
+.search-box input:focus{border-color:var(--main-light);width:200px;}
+.search-box svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--text-3);}
+.btn-ghost{
+  padding:7px 14px;border:1px solid var(--main-light);border-radius:var(--radius-btn);
+  background:transparent;color:var(--main-deep);font-size:13.5px;cursor:pointer;transition:background .18s;
+  white-space:nowrap;
+}
+.btn-ghost:hover{background:var(--main-soft);}
+.hamburger{display:none;background:none;border:none;padding:6px;cursor:pointer;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--main-deep);margin:4px 0;border-radius:2px;}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(201,138,75,.16),transparent 46%),
+    radial-gradient(circle at 12% 82%,rgba(168,117,154,.2),transparent 52%),
+    linear-gradient(140deg,#fdf6fa,#f3e6ef 60%,#faf0e2);
+  border-bottom:1px solid var(--line);
+}
+.hero-inner{
+  max-width:1360px;margin:0 auto;padding:52px 18px 58px;
+  display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:40px;align-items:center;
+}
+.hero-tag{
+  display:inline-block;font-size:12.5px;letter-spacing:1.5px;color:var(--main);
+  border:1px solid var(--main-light);padding:3px 12px;border-radius:20px;margin-bottom:16px;background:rgba(255,255,255,.6);
+}
+.hero h1{font-size:44px;letter-spacing:1px;color:var(--main-deep);margin-bottom:16px;}
+.hero-desc{font-size:16px;color:var(--text-2);max-width:560px;margin-bottom:24px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-main{
+  padding:10px 22px;background:var(--main);color:#fff;border:none;border-radius:var(--radius-btn);
+  font-size:14.5px;cursor:pointer;transition:background .18s,transform .18s;font-weight:600;
+}
+.btn-main:hover{background:var(--main-deep);transform:translateY(-2px);}
+.btn-line{
+  padding:10px 22px;background:rgba(255,255,255,.7);color:var(--main-deep);border:1px solid var(--main-light);
+  border-radius:var(--radius-btn);font-size:14.5px;cursor:pointer;transition:background .18s,transform .18s;
+}
+.btn-line:hover{background:#fff;transform:translateY(-2px);}
+.hero-stats{display:flex;gap:30px;margin-top:30px;flex-wrap:wrap;}
+.hero-stats div{font-size:13px;color:var(--text-3);}
+.hero-stats b{display:block;font-size:24px;color:var(--main-deep);font-weight:800;line-height:1.3;}
+.hero-visual{position:relative;display:flex;justify-content:center;}
+.hero-visual svg{width:100%;max-width:400px;height:auto;filter:drop-shadow(0 14px 30px rgba(85,48,74,.16));}
+.hero-visual .float-card{
+  position:absolute;right:2%;bottom:6%;background:#fff;border-radius:12px;padding:10px 14px;
+  box-shadow:var(--shadow-hover);font-size:12.5px;color:var(--text-2);line-height:1.6;
+  border-left:3px solid var(--accent);animation:floatY 5s ease-in-out infinite;
+}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+
+/* ---------- 主布局 ---------- */
+.layout{
+  max-width:1360px;margin:0 auto;padding:34px 18px 60px;
+  display:grid;grid-template-columns:180px minmax(0,1fr) 250px;gap:var(--gap);align-items:start;
+}
+.channel-col{position:sticky;top:calc(var(--ann-h) + var(--head-h) + 16px);}
+.channel-title{font-size:12.5px;letter-spacing:1.5px;color:var(--text-3);margin-bottom:10px;padding-left:10px;}
+.channel-list{list-style:none;margin:0;padding:0;}
+.channel-list li{margin:0;}
+.channel-list a{
+  display:flex;align-items:center;justify-content:space-between;gap:6px;
+  padding:8px 10px;border-radius:var(--radius-btn);font-size:13.8px;color:var(--text-2);
+  border-left:2px solid transparent;transition:background .16s,color .16s,border-color .16s;
+}
+.channel-list a:hover,.channel-list a:focus-visible{background:var(--main-soft);color:var(--main-deep);outline:none;}
+.channel-list a.current{background:var(--main-soft);color:var(--main-deep);font-weight:600;border-left-color:var(--main);}
+.channel-list a em{font-style:normal;font-size:11.5px;color:var(--text-3);}
+
+.main-col{min-width:0;}
+.aside-col{min-width:0;display:flex;flex-direction:column;gap:var(--gap);}
+
+/* ---------- 通用板块 ---------- */
+.section{margin-bottom:44px;scroll-margin-top:calc(var(--ann-h) + var(--head-h) + 14px);}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:16px;flex-wrap:wrap;}
+.section-head h2{font-size:21px;color:var(--main-deep);letter-spacing:.3px;position:relative;padding-left:14px;}
+.section-head h2::before{
+  content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:5px;height:19px;border-radius:3px;background:linear-gradient(var(--main),var(--accent));
+}
+.section-head .sub{font-size:12.5px;color:var(--text-3);}
+.section-intro{font-size:14px;color:var(--text-2);margin:-4px 0 16px;}
+
+/* 概览 */
+.overview{
+  background:var(--panel);border-radius:var(--radius-card);padding:24px 26px;box-shadow:var(--shadow);
+  border:1px solid var(--line);
+}
+.overview p{color:var(--text-2);font-size:14.5px;}
+.overview p:last-child{margin-bottom:0;}
+.overview strong{color:var(--main-deep);}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(238px,1fr));gap:18px;}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);}
+.card-img{width:100%;height:150px;object-fit:cover;background:var(--main-soft);}
+.card-body{padding:14px 15px 16px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.card-body h3{font-size:15.5px;color:var(--text-1);}
+.card-body h3 a:hover{color:var(--main);}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{
+  font-size:11.5px;padding:2px 8px;border-radius:var(--radius-tag);background:var(--main-soft);
+  color:var(--main-deep);white-space:nowrap;
+}
+.tag.accent{background:var(--accent-soft);color:#8a5a1e;}
+.card-desc{font-size:13px;color:var(--text-2);flex:1;margin:0;}
+.card-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text-3);border-top:1px dashed var(--line);padding-top:9px;}
+.card-meta .hot{color:var(--accent);font-weight:600;}
+
+/* 更新动态 */
+.update-list{list-style:none;margin:0;padding:0;background:var(--panel);border-radius:var(--radius-card);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden;}
+.update-list li{display:flex;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);align-items:flex-start;}
+.update-list li:last-child{border-bottom:none;}
+.update-list li:hover{background:#fdf9fb;}
+.update-date{flex-shrink:0;font-size:12px;color:var(--main);background:var(--main-soft);border-radius:var(--radius-tag);padding:2px 8px;margin-top:2px;font-variant-numeric:tabular-nums;}
+.update-list h3{font-size:14.5px;margin-bottom:2px;}
+.update-list p{font-size:13px;color:var(--text-2);margin:0;}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;}
+.cat-item{
+  display:flex;flex-direction:column;gap:4px;padding:14px 14px 13px;border-radius:var(--radius-card);
+  background:var(--panel);border:1px solid var(--line);transition:border-color .18s,background .18s,transform .18s;
+}
+.cat-item:hover{border-color:var(--main-light);background:var(--main-soft);transform:translateY(-2px);}
+.cat-item b{font-size:14.5px;color:var(--main-deep);}
+.cat-item span{font-size:12px;color:var(--text-3);}
+.cat-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+.filter-btn{
+  padding:5px 13px;border:1px solid var(--line);border-radius:20px;background:var(--panel);
+  font-size:13px;color:var(--text-2);cursor:pointer;transition:all .16s;
+}
+.filter-btn:hover{border-color:var(--main-light);color:var(--main-deep);}
+.filter-btn.active{background:var(--main);color:#fff;border-color:var(--main);}
+.filter-empty{display:none;padding:16px;text-align:center;color:var(--text-3);font-size:13.5px;background:var(--panel);border-radius:var(--radius-card);border:1px dashed var(--line);}
+
+/* 深度解析 */
+.deep{
+  background:var(--panel);border-radius:var(--radius-card);border:1px solid var(--line);
+  box-shadow:var(--shadow);padding:28px 30px;
+}
+.deep h3{font-size:17px;color:var(--main-deep);margin:26px 0 10px;padding-left:12px;border-left:3px solid var(--accent);}
+.deep h3:first-of-type{margin-top:6px;}
+.deep p{font-size:14.5px;color:var(--text-2);}
+.deep ul,.deep ol{color:var(--text-2);font-size:14.5px;}
+.deep table{width:100%;border-collapse:collapse;margin:12px 0 16px;font-size:13.5px;}
+.deep th,.deep td{border:1px solid var(--line);padding:8px 10px;text-align:left;color:var(--text-2);}
+.deep th{background:var(--main-soft);color:var(--main-deep);font-weight:600;}
+.deep .quote{
+  margin:14px 0;padding:12px 16px;background:var(--accent-soft);border-left:3px solid var(--accent);
+  border-radius:0 var(--radius-btn) var(--radius-btn) 0;font-size:13.5px;color:#7a521c;
+}
+
+/* 指南步骤 */
+.steps{counter-reset:step;list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.steps li{
+  counter-increment:step;position:relative;padding:14px 18px 14px 54px;background:var(--panel);
+  border-radius:var(--radius-card);border:1px solid var(--line);font-size:14px;color:var(--text-2);
+}
+.steps li::before{
+  content:counter(step);position:absolute;left:16px;top:14px;width:24px;height:24px;border-radius:50%;
+  background:var(--main);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;
+}
+.steps li b{color:var(--main-deep);display:block;margin-bottom:2px;font-size:14.5px;}
+
+/* FAQ */
+.faq-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);margin-bottom:10px;
+  overflow:hidden;
+}
+.faq-item summary{
+  cursor:pointer;padding:14px 18px;font-size:14.5px;font-weight:600;color:var(--text-1);
+  list-style:none;position:relative;padding-right:40px;transition:background .16s;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{
+  content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);
+  font-size:19px;color:var(--main-light);font-weight:400;transition:transform .2s;
+}
+.faq-item[open] summary::after{content:"−";}
+.faq-item summary:hover{background:#fdf7fb;}
+.faq-item .faq-a{padding:0 18px 15px;font-size:13.8px;color:var(--text-2);}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;}
+.comment{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:13px 15px;
+  font-size:13.3px;color:var(--text-2);line-height:1.7;
+}
+.comment .cm-head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+.avatar{
+  width:26px;height:26px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-size:12px;color:#fff;font-weight:700;background:var(--main-light);
+}
+.comment .nick{font-size:13px;font-weight:600;color:var(--text-1);}
+.comment .cm-time{font-size:11.5px;color:var(--text-3);margin-left:auto;}
+.comment p{margin:0;}
+
+/* 资讯 */
+.news-list{display:flex;flex-direction:column;gap:12px;}
+.news-item{
+  display:flex;gap:16px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:14px 16px;transition:box-shadow .2s,border-color .2s;
+}
+.news-item:hover{box-shadow:var(--shadow-hover);border-color:var(--main-light);}
+.news-item img{width:112px;height:78px;border-radius:var(--radius-btn);object-fit:cover;flex-shrink:0;background:var(--main-soft);}
+.news-body h3{font-size:15px;margin-bottom:4px;}
+.news-body h3 a:hover{color:var(--main);}
+.news-body .news-date{font-size:11.5px;color:var(--main);margin-bottom:4px;display:block;}
+.news-body p{font-size:13px;color:var(--text-2);margin:0;}
+
+/* 推荐标签 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px;}
+.rec-tag{
+  padding:7px 14px;background:var(--panel);border:1px solid var(--line);border-radius:20px;
+  font-size:13px;color:var(--text-2);transition:all .16s;
+}
+.rec-tag:hover{background:var(--main-soft);border-color:var(--main-light);color:var(--main-deep);}
+.rec-tag b{color:var(--accent);font-weight:600;margin-left:4px;font-size:12px;}
+
+/* 榜单 */
+.rank-list{list-style:none;margin:0;padding:0;counter-reset:rank;background:var(--panel);border-radius:var(--radius-card);border:1px solid var(--line);overflow:hidden;box-shadow:var(--shadow);}
+.rank-list li{counter-increment:rank;display:flex;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);align-items:center;}
+.rank-list li:last-child{border-bottom:none;}
+.rank-list li::before{
+  content:counter(rank);width:22px;height:22px;border-radius:6px;background:var(--main-soft);color:var(--main-deep);
+  font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.rank-list li:nth-child(-n+3)::before{background:var(--main);color:#fff;}
+.rank-list .rk-name{font-size:13.8px;font-weight:600;color:var(--text-1);flex:1;min-width:0;}
+.rank-list .rk-name small{display:block;font-weight:400;font-size:11.5px;color:var(--text-3);}
+.rank-list .rk-score{font-size:12.5px;color:var(--accent);font-weight:600;flex-shrink:0;}
+
+/* 投稿互动 */
+.interact{
+  background:linear-gradient(125deg,var(--main-soft),var(--accent-soft));
+  border-radius:var(--radius-banner);padding:22px 24px;border:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;
+}
+.interact h2{font-size:19px;color:var(--main-deep);margin-bottom:6px;}
+.interact p{font-size:13.5px;color:var(--text-2);margin:0;max-width:520px;}
+.interact .acts{display:flex;gap:10px;flex-wrap:wrap;}
+
+/* 侧栏 */
+.side-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:16px 16px 14px;box-shadow:var(--shadow);}
+.side-card h2{font-size:15px;color:var(--main-deep);margin-bottom:12px;padding-bottom:9px;border-bottom:1px solid var(--line);}
+.side-list{list-style:none;margin:0;padding:0;}
+.side-list li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px;color:var(--text-2);display:flex;gap:8px;align-items:baseline;}
+.side-list li:last-child{border-bottom:none;}
+.side-list li a:hover{color:var(--main);}
+.side-list .idx{font-size:11.5px;color:var(--main-light);font-weight:700;flex-shrink:0;}
+.side-note{font-size:12px;color:var(--text-3);margin-top:10px;line-height:1.6;}
+.side-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.side-tags a{font-size:12px;padding:3px 9px;border-radius:var(--radius-tag);background:var(--main-soft);color:var(--main-deep);}
+.side-tags a:hover{background:var(--main);color:#fff;}
+
+/* 页尾 */
+.site-foot{background:var(--main-deep);color:#e8d8e3;margin-top:20px;}
+.foot-inner{max-width:1360px;margin:0 auto;padding:40px 18px 24px;}
+.foot-top{display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:32px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.14);}
+.foot-brand{font-size:19px;font-weight:800;color:#fff;margin-bottom:10px;}
+.foot-brand-desc{font-size:13px;color:#c9b2c0;line-height:1.8;max-width:340px;}
+.foot-col h4{font-size:14px;color:#fff;margin-bottom:10px;}
+.foot-col ul{list-style:none;margin:0;padding:0;}
+.foot-col li{margin-bottom:7px;}
+.foot-col a{font-size:13px;color:#c9b2c0;transition:color .16s;}
+.foot-col a:hover{color:#fff;}
+.foot-bottom{padding-top:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:#a98fa0;}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:20px;bottom:24px;width:42px;height:42px;border-radius:50%;
+  background:var(--main);color:#fff;border:none;cursor:pointer;box-shadow:var(--shadow-hover);
+  display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s,transform .2s;z-index:50;
+}
+.to-top.show{opacity:1;visibility:visible;}
+.to-top:hover{background:var(--main-deep);transform:translateY(-2px);}
+.to-top svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.4;}
+
+/* 移动端抽屉 */
+.drawer-mask{
+  position:fixed;inset:0;background:rgba(36,27,34,.45);z-index:70;opacity:0;visibility:hidden;transition:opacity .22s,visibility .22s;
+}
+.drawer-mask.open{opacity:1;visibility:visible;}
+.drawer{
+  position:fixed;top:0;left:0;bottom:0;width:270px;max-width:82vw;background:var(--panel);z-index:75;
+  transform:translateX(-105%);transition:transform .26s ease;padding:20px 18px;overflow-y:auto;
+}
+.drawer.open{transform:translateX(0);}
+.drawer h3{font-size:15px;color:var(--main-deep);margin-bottom:14px;}
+.drawer .channel-list a{padding:10px 10px;font-size:14.5px;}
+.drawer-close{margin-top:18px;width:100%;padding:9px;border:1px solid var(--line);border-radius:var(--radius-btn);background:var(--main-soft);color:var(--main-deep);cursor:pointer;font-size:14px;}
+
+/* 响应式 */
+@media (max-width:1024px){
+  .layout{grid-template-columns:minmax(0,1fr) 250px;}
+  .channel-col{display:none;}
+  .hero-inner{grid-template-columns:1fr;gap:26px;}
+  .hero h1{font-size:36px;}
+  .hero-visual{order:-1;}
+  .hero-visual svg{max-width:300px;}
+  .foot-top{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:740px){
+  :root{--gap:20px;}
+  .layout{grid-template-columns:1fr;}
+  .aside-col{order:2;}
+  .head-nav{display:none;}
+  .hamburger{display:block;}
+  .search-box input{width:130px;}
+  .search-box input:focus{width:150px;}
+  .head-actions .btn-ghost{display:none;}
+  .hero h1{font-size:30px;}
+  .hero-inner{padding:34px 16px 38px;}
+  .hero-stats{gap:20px;}
+  .hero-stats b{font-size:20px;}
+  .card-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;}
+  .card-img{height:120px;}
+  .news-item img{width:84px;height:64px;}
+  .deep{padding:20px 18px;}
+  .foot-top{grid-template-columns:1fr;}
+  .ann-move{gap:16px;}
+  .to-top{right:14px;bottom:16px;}
+  .comment-grid{grid-template-columns:1fr;}
+  .hero-visual .float-card{display:none;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="annbar" role="region" aria-label="更新公告">
+  <div class="ann-inner">
+    <span class="ann-brand">高莜柔阅读</span>
+    <div class="ann-move">
+      <span><b>11-08</b>《迟到的第十一封》番外二已补完</span>
+      <span><b>11-07</b>《雾港三年》第41章 深夜更新</span>
+      <span><b>新增</b> 追更避雷清单 12 条</span>
+      <span><b>11-05</b> 书评投稿入口开放</span>
+    </div>
+  </div>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-head">
+  <div class="head-inner">
+    <a class="logo" href="#top" aria-label="高莜柔阅读 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#7a4a6b"/>
+        <path d="M16 20h14a6 6 0 0 1 6 6v22a5 5 0 0 0-5-5H16z" fill="#f6e9f1"/>
+        <path d="M48 20H34a6 6 0 0 0-6 6v22a5 5 0 0 1 5-5h15z" fill="#e8c7da"/>
+        <path d="M32 26v22" stroke="#7a4a6b" stroke-width="1.6"/>
+      </svg>
+      <span class="logo-text">高莜柔阅读</span>
+    </a>
+    <nav class="head-nav" aria-label="主导航">
+      <a href="#overview">领域概览</a>
+      <a href="#featured">精选书单</a>
+      <a href="#updates">更新动态</a>
+      <a href="#category">分类入口</a>
+      <a href="#deep">深度解析</a>
+      <a href="#guide">追更指南</a>
+      <a href="#faq">常见问答</a>
+      <a href="#comments">读者评论</a>
+      <a href="#news">相关资讯</a>
+    </nav>
+    <div class="head-actions">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="siteSearch" type="search" placeholder="搜书名 / 作者 / 类型" aria-label="站内搜索">
+      </div>
+      <button class="btn-ghost" type="button" data-jump="#interact">投稿书评</button>
+      <button class="hamburger" id="hamburger" type="button" aria-label="打开频道菜单" aria-expanded="false" aria-controls="drawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- 移动抽屉 -->
+<div class="drawer-mask" id="drawerMask"></div>
+<aside class="drawer" id="drawer" aria-label="频道菜单">
+  <h3>频道索引</h3>
+  <ul class="channel-list">
+    <li><a href="#overview">领域概览</a></li>
+    <li><a href="#featured">精选书单</a></li>
+    <li><a href="#updates">更新动态</a></li>
+    <li><a href="#category">分类入口</a></li>
+    <li><a href="#deep">深度解析</a></li>
+    <li><a href="#guide">追更指南</a></li>
+    <li><a href="#faq">常见问答</a></li>
+    <li><a href="#comments">读者评论</a></li>
+    <li><a href="#news">相关资讯</a></li>
+    <li><a href="#rank">热度榜单</a></li>
+    <li><a href="#interact">投稿交流</a></li>
+  </ul>
+  <button class="drawer-close" id="drawerClose" type="button">收起菜单</button>
+</aside>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-tag">都市言情 · 连载追更</span>
+        <h1>高莜柔阅读</h1>
+        <p class="hero-desc">汇聚都市言情连载的番外补完顺序、角色关系梳理与章节避雷提示，收录《迟到的第十一封》《雾港三年》《旧楼梯间》等 8 部在更作品，按更新节奏与读者口碑分层呈现。</p>
+        <div class="hero-actions">
+          <button class="btn-main" type="button" data-jump="#featured">查看精选书单</button>
+          <button class="btn-line" type="button" data-jump="#updates">今日更新 6 条</button>
+        </div>
+        <div class="hero-stats">
+          <div><b>8</b>在更作品</div>
+          <div><b>11</b>内容板块</div>
+          <div><b>11-08</b>最近更新</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg viewBox="0 0 400 320" role="img" aria-label="翻开的两本书与章节卡片层叠插画">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#a8759a"/><stop offset="1" stop-color="#55304a"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e8c7da"/><stop offset="1" stop-color="#c98a4b"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="200" cy="286" rx="132" ry="14" fill="#55304a" opacity=".13"/>
+          <rect x="58" y="70" width="132" height="176" rx="10" fill="url(#g1)" transform="rotate(-8 124 158)"/>
+          <rect x="86" y="62" width="132" height="176" rx="10" fill="#fdf6fa" stroke="#e7dde4"/>
+          <rect x="104" y="86" width="92" height="6" rx="3" fill="#a8759a"/>
+          <rect x="104" y="102" width="70" height="5" rx="2.5" fill="#e7dde4"/>
+          <rect x="104" y="116" width="84" height="5" rx="2.5" fill="#e7dde4"/>
+          <rect x="104" y="132" width="58" height="5" rx="2.5" fill="#e7dde4"/>
+          <rect x="104" y="152" width="92" height="46" rx="6" fill="#f3e6ef"/>
+          <rect x="114" y="162" width="48" height="4" rx="2" fill="#a8759a"/>
+          <rect x="114" y="172" width="68" height="4" rx="2" fill="#d9c6d4"/>
+          <rect x="114" y="182" width="40" height="4" rx="2" fill="#d9c6d4"/>
+          <rect x="206" y="98" width="132" height="176" rx="10" fill="url(#g2)" transform="rotate(7 272 186)"/>
+          <rect x="228" y="118" width="92" height="6" rx="3" fill="#fff" opacity=".85"/>
+          <rect x="228" y="134" width="64" height="5" rx="2.5" fill="#fff" opacity=".55"/>
+          <rect x="228" y="148" width="78" height="5" rx="2.5" fill="#fff" opacity=".55"/>
+          <circle cx="316" cy="236" r="26" fill="#fdf6fa" stroke="#e7dde4"/>
+          <path d="M306 236l7 7 13-14" stroke="#7a4a6b" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="float-card">
+          <strong style="color:#55304a">今日补更</strong><br>
+          《迟到的第十一封》番外二 · 约 4200 字
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏布局 -->
+  <div class="layout">
+
+    <!-- 左频道索引 -->
+    <aside class="channel-col" aria-label="频道索引">
+      <div class="channel-title">频道索引</div>
+      <ul class="channel-list">
+        <li><a href="#overview">领域概览</a></li>
+        <li><a href="#featured">精选书单 <em>8</em></a></li>
+        <li><a href="#updates">更新动态 <em>10</em></a></li>
+        <li><a href="#category">分类入口 <em>8</em></a></li>
+        <li><a href="#deep">深度解析</a></li>
+        <li><a href="#guide">追更指南</a></li>
+        <li><a href="#faq">常见问答 <em>6</em></a></li>
+        <li><a href="#comments">读者评论 <em>16</em></a></li>
+        <li><a href="#news">相关资讯 <em>6</em></a></li>
+        <li><a href="#rec">相关推荐</a></li>
+        <li><a href="#rank">热度榜单</a></li>
+        <li><a href="#interact">投稿交流</a></li>
+      </ul>
+    </aside>
+
+    <!-- 主内容 -->
+    <div class="main-col">
+
+      <!-- 1 领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-head">
+          <h2>都市言情连载的几条主线</h2>
+          <span class="sub">领域概览</span>
+        </div>
+        <div class="overview">
+          <p>都市言情连载大致分四类走向。<strong>职场群像线</strong>以项目节点推进感情，代表是《雾港三年》，男女主在同一家港务公司，41 章里换了三次办公室，感情进展和调岗、竞标绑在一起。<strong>邻里生活线</strong>把关系放进老小区或旧楼梯间，冲突来自噪音、物业费和代际关系，《旧楼梯间》整部 27 万字没出过小区三公里。<strong>悬疑复合线</strong>用一桩旧案当引子，《迟到的第十一封》开头是十年前未寄出的信件，追查过程和男女主旧情并行。<strong>重逢克制线</strong>则把时间拉长到五到八年，《南站最后一班》从 2018 年的分别写到 2026 年的重逢。</p>
+          <p>当前值得关注的是番外补完潮。2026 年 10 月下旬到 11 月初，至少 5 部作品在正文完结后追加番外：《迟到的第十一封》番外二在 11 月 8 日上线，《雾港三年》计划 11 月中旬补写男二视角，《旧楼梯间》则把婚后日常拆成 6 个短篇陆续放出。追更读者的主要精力已经从等正文转向等番外。</p>
+          <p>另一个变化是章节长度。近三个月在更的 8 部作品里，有 6 部单章在 2800 到 3600 字之间，比 2025 年同期短了约 800 字，更新频率却从周更两章提到周更三到四章。对追更的人来说，碎片时间能读完一章，但连续阅读时的完整段落感变弱了。这个取舍在读者评论里争得比较厉害，后文会展开。</p>
+        </div>
+      </section>
+
+      <!-- 2 精选内容推荐 -->
+      <section class="section" id="featured">
+        <div class="section-head">
+          <h2>精选书单：8 部在更作品</h2>
+          <span class="sub">按口碑与更新稳定性挑选</span>
+        </div>
+        <div class="card-grid" id="featuredGrid">
+
+          <article class="card" data-key="迟到的第十一封 悬疑 信件 番外 双线 高莜柔">
+            <img class="card-img" src="https://picsum.photos/seed/letter11/400/300" width="400" height="300" loading="lazy" alt="《迟到的第十一封》信件与旧档案封面构图">
+            <div class="card-body">
+              <h3><a href="#news">迟到的第十一封</a></h3>
+              <div class="card-tags"><span class="tag">悬疑复合</span><span class="tag">双线叙事</span><span class="tag accent">番外补完</span></div>
+              <p class="card-desc">十年前未寄出的信牵出旧案，女主重返旧城区。正文 62 章已完结，番外二 11 月 8 日上线，补的是男二在案发当天的行踪。</p>
+              <div class="card-meta"><span>正文完结 · 番外连载</span><span class="hot">热度 9.4</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-key="雾港三年 职场 港务 群像 调岗 高莜柔">
+            <img class="card-img" src="https://picsum.photos/seed/wugang3/400/300" width="400" height="300" loading="lazy" alt="《雾港三年》港口集装箱与办公室场景插画">
+            <div class="card-body">
+              <h3><a href="#updates">雾港三年</a></h3>
+              <div class="card-tags"><span class="tag">职场群像</span><span class="tag">港务系统</span><span class="tag">慢热</span></div>
+              <p class="card-desc">男女主同在一家港务公司，感情随三次调岗和一次竞标推进。第 41 章 11 月 7 日深夜更新，两人第一次正面谈离职。</p>
+              <div class="card-meta"><span>连载中 · 周更三章</span><span class="hot">热度 9.1</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-key="旧楼梯间 邻里 老小区 婚后 短篇 高莜柔">
+            <img class="card-img" src="https://picsum.photos/seed/staircase/400/300" width="400" height="300" loading="lazy" alt="《旧楼梯间》老式居民楼楼道场景">
+            <div class="card-body">
+              <h3><a href="#updates">旧楼梯间</a></h3>
+              <div class="card-tags"><span class="tag">邻里生活</span><span class="tag">老小区</span><span class="tag accent">婚后番外</span></div>
+              <p class="card-desc">27 万字不出小区三公里，冲突来自噪音与物业费。婚后日常拆成 6 个短篇，已放出 3 篇，每篇约 2000 字。</p>
+              <div class="card-meta"><span>正文完结 · 番外更新中</span><span class="hot">热度 8.8</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-key="南站最后一班 重逢 克制 时间跨度 高莜柔">
+            <img class="card-img" src="https://picsum.photos/seed/nanzhan/400/300" width="400" height="300" loading="lazy" alt="《南站最后一班》夜间车站候车厅">
+            <div class="card-body">
+              <h3><a href="#comments">南站最后一班</a></h3>
+              <div class="card-tags"><span class="tag">重逢克制</span><span class="tag">时间跨度</span><span class="tag">群像配角</span></div>
+              <p class="card-desc">从 2018 年分别写到 2026 年重逢，中间穿插两段各自婚姻。近三章配角戏份多于主线，读者分两派吵得凶。</p>
+              <div class="card-meta"><span>连载中 · 周更两章</span><span class="hot">热度 8.5</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-key="春分之后 婚内 家庭 双视角 高莜柔">
+            <img class="card-img" src="https://picsum.photos/seed/chunfen/400/300" width="400" height="300" loading="lazy" alt="《春分之后》厨房与餐桌日常场景">
+            <div class="card-body">
+              <h3><a href="#comments">春分之后</a></h3>
+              <div class="card-tags"><span class="tag">婚内日常</span><span class="tag">双视角</span><span class="tag">生活流</span></div>
+              <p class="card-desc">夫妻双视角交替，一章换一个人称。第 19 章起男方视角连续四章，被读者指为节奏拖沓，作者 11 月 3 日回应会调整。</p>
+              <div class="card-meta"><span>连载中 · 周更两章</span><span class="hot">热度 8.2</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-key="四楼没有灯 悬疑 独居 短章 高莜柔">
+            <img class="card-img" src="https://picsum.photos/seed/floor4/400/300" width="400" height="300" loading="lazy" alt="《四楼没有灯》夜间走廊与门牌">
+            <div class="card-body">
+              <h3><a href="#faq">四楼没有灯</a></h3>
+              <div class="card-tags"><span class="tag">悬疑情感</span><span class="tag">独居</span><span class="tag">短章快更</span></div>
+              <p class="card-desc">单章 2400 字左右，节奏快。独居女主与楼上失踪住户的旧物产生联系，线索靠水电费单和快递记录推进。</p>
+              <div class="card-meta"><span>连载中 · 隔日更</span><span class="hot">热度 8.0</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-key="白露为霜 青梅 小城 慢节奏 高莜柔">
+            <img class="card-img" src="https://picsum.photos/seed/bailu/400/300" width="400" height="300" loading="lazy" alt="《白露为霜》小城街巷与旧书店">
+            <div class="card-body">
+              <h3><a href="#rec">白露为霜</a></h3>
+              <div class="card-tags"><span class="tag">青梅竹马</span><span class="tag">小城</span><span class="tag">慢节奏</span></div>
+              <p class="card-desc">江南小城背景，节奏慢，前三章几乎全是环境。适合能接受慢热开篇的读者，第 8 章才出现第一个冲突。</p>
+              <div class="card-meta"><span>连载中 · 周更一章</span><span class="hot">热度 7.6</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-key="第七次搬家 都市 漂泊 租房 高莜柔">
+            <img class="card-img" src="https://picsum.photos/seed/move7/400/300" width="400" height="300" loading="lazy" alt="《第七次搬家》出租屋纸箱与行李">
+            <div class="card-body">
+              <h3><a href="#rank">第七次搬家</a></h3>
+              <div class="card-tags"><span class="tag">都市漂泊</span><span class="tag">租房</span><span class="tag">短篇集</span></div>
+              <p class="card-desc">由 7 个可独立阅读的短篇组成，人物在不同篇里交叉出现。第 4 篇《合租第三个月》被读者单独拎出来讨论最多。</p>
+              <div class="card-meta"><span>已完结 · 全 7 篇</span><span class="hot">热度 7.9</span></div>
+            </div>
+          </article>
+
+        </div>
+        <div class="filter-empty" id="featuredEmpty">没有匹配的书名或标签，换个关键词试试，例如「雾港」「番外」「职场」。</div>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="section" id="updates">
+        <div class="section-head">
+          <h2>11 月更新进度</h2>
+          <span class="sub">最近 5 天 · 10 条</span>
+        </div>
+        <ul class="update-list">
+          <li>
+            <span class="update-date">11-08</span>
+            <div><h3>《迟到的第十一封》番外二「案发当天」</h3><p>约 4200 字，补男二在 2016 年 6 月 3 日的行踪，解释了正文第 47 章一处时间对不上的地方。</p></div>
+          </li>
+          <li>
+            <span class="update-date">11-07</span>
+            <div><h3>《雾港三年》第 41 章「离职谈话」</h3><p>深夜 23:40 更新，男女主第一次正面谈离职，末尾留了竞标结果未交代。</p></div>
+          </li>
+          <li>
+            <span class="update-date">11-07</span>
+            <div><h3>《旧楼梯间》婚后番外第 3 篇「物业费」</h3><p>约 2100 字，写夫妻俩为楼道灯维修费跟邻居扯皮，延续正文的琐碎风格。</p></div>
+          </li>
+          <li>
+            <span class="update-date">11-06</span>
+            <div><h3>《四楼没有灯》第 28 章「水费单」</h3><p>线索推进到水电费记录，女主第一次进入楼上住户房间，章节末尾出现第二个名字。</p></div>
+          </li>
+          <li>
+            <span class="update-date">11-05</span>
+            <div><h3>《南站最后一班》第 55 章「2019 年冬」</h3><p>倒叙回到 2019 年，补女主第一段婚姻的开始，篇幅 3400 字，配角戏份偏多。</p></div>
+          </li>
+          <li>
+            <span class="update-date">11-05</span>
+            <div><h3>《春分之后》第 22 章「厨房」</h3><p>回到女方视角，作者在章末附了一段说明，称后续会缩短男方视角的连续篇幅。</p></div>
+          </li>
+          <li>
+            <span class="update-date">11-04</span>
+            <div><h3>《白露为霜》第 14 章「书店关门」</h3><p>周更一章照常，旧书店这条线暂告一段落，男女主关系进了一步但没点破。</p></div>
+          </li>
+          <li>
+            <span class="update-date">11-04</span>
+            <div><h3>《雾港三年》配角番外预告</h3><p>作者在评论区说 11 月中旬补男二视角，篇幅约 8000 字，会单独开一个番外标签。</p></div>
+          </li>
+          <li>
+            <span class="update-date">11-03</span>
+            <div><h3>《春分之后》作者回应节奏争议</h3><p>针对第 19 至 21 章连续男方视角的讨论，作者表示会调整，但未给出具体章节安排。</p></div>
+          </li>
+          <li>
+            <span class="update-date">11-02</span>
+            <div><h3>《第七次搬家》第 4 篇修订版</h3><p>《合租第三个月》补了约 600 字结尾，作者称是应读者要求补的合租后续。</p></div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="section" id="category">
+        <div class="section-head">
+          <h2>按类型找书</h2>
+          <span class="sub">点击筛选下方书单</span>
+        </div>
+        <div class="cat-filter-bar" id="catBar">
+          <button class="filter-btn active" type="button" data-filter="all">全部</button>
+          <button class="filter-btn" type="button" data-filter="职场">职场群像</button>
+          <button class="filter-btn" type="button" data-filter="悬疑">悬疑复合</button>
+          <button class="filter-btn" type="button" data-filter="邻里">邻里生活</button>
+          <button class="filter-btn" type="button" data-filter="重逢">重逢克制</button>
+          <button class="filter-btn" type="button" data-filter="婚内">婚内日常</button>
+          <button class="filter-btn" type="button" data-filter="青梅">青梅竹马</button>
+          <button class="filter-btn" type="button" data-filter="番外">番外补完</button>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-item" href="#featured"><b>职场群像</b><span>调岗、竞标、办公室关系</span></a>
+          <a class="cat-item" href="#featured"><b>悬疑复合</b><span>旧案、信件、双线追查</span></a>
+          <a class="cat-item" href="#featured"><b>邻里生活</b><span>老小区、物业、代际</span></a>
+          <a class="cat-item" href="#featured"><b>重逢克制</b><span>时间跨度、各自婚姻</span></a>
+          <a class="cat-item" href="#featured"><b>婚内日常</b><span>双视角、生活流</span></a>
+          <a class="cat-item" href="#featured"><b>青梅竹马</b><span>小城、慢热、旧书店</span></a>
+          <a class="cat-item" href="#updates"><b>番外补完</b><span>婚后短篇、配角视角</span></a>
+          <a class="cat-item" href="#rank"><b>短篇集</b><span>可独立阅读、人物交叉</span></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="section" id="deep">
+        <div class="section-head">
+          <h2>章节变短之后，追更体验发生了什么</h2>
+          <span class="sub">深度解析</span>
+        </div>
+        <div class="deep">
+          <p>2026 年 8 月到 11 月，在更的 8 部作品里，6 部把单章压到 2800 至 3600 字，更新频率提到周更三到四章。同期《雾港三年》从 4200 字降到 3100 字左右，《春分之后》从 3800 字降到 2900 字。这个变化不是个例，是这一批连载的共同选择。判断它好不好，得拆到具体环节。</p>
+
+          <h3>短章省下的是阅读时间，挪走的是段落感</h3>
+          <p>以《雾港三年》第 38 到 41 章为例，四章合计约 12400 字，此前三章合计约 12600 字。总量几乎没变，切分方式变了。读者拿到的是四个可以在地铁上读完的片段，但一次竞标从立项到出结果被拆到三章里，每章只在开头交代一句进度，读到第三章已经需要往回翻。</p>
+          <p>段落感变弱最明显的是群像戏。《雾港三年》第 40 章出场了 7 个同事，每人一句台词，谁跟谁站一边要靠读者自己拼。相比之下，《旧楼梯间》番外第 3 篇只写夫妻俩和两个邻居，2100 字里把物业费怎么摊、谁先垫的钱讲清楚了，信息密度反而更高。字数少不等于信息少，关键看一章里塞了几个需要记住的人。</p>
+
+          <h3>追更节奏和补更成本，得分开算</h3>
+          <p>短章加高频，对每天追的人友好，对隔几天补的人不友好。以《四楼没有灯》为例，隔日更、单章 2400 字，一周约 8400 字；《白露为霜》周更一章、单章 5000 字上下。前者一周要打开四次，后者一次读完。两种节奏各有代价：前者容易断在关键处，后者等一周可能只等到一场雨。</p>
+          <p>《南站最后一班》第 55 章是个典型。这章 3400 字，倒叙回 2019 年，主线推进为零。追更的人当天在评论区问「主线呢」，补更的人攒三章一起看，反而觉得这段补得有必要。同一章，两种读法得到两种结论。</p>
+
+          <div class="quote">把「更新快」拆开看：速度快来自三个环节——单章字数下调、写作周期缩短、平台排期提前。前两项是作者选择，第三项涉及平台推荐位。三者叠加才出现「一周四条更新」的表象，缺一项就做不到。</div>
+
+          <h3>番外补完的顺序，比正文更影响评价</h3>
+          <p>《迟到的第十一封》正文 62 章完结时，第 47 章有一处时间对不上：男二称 2016 年 6 月 3 日人在外地，但同章另一段写他当天出现在旧城区。读者在 10 月下旬整理出这条矛盾，11 月 8 日上线的番外二专门补了男二当天的行踪。补完之后，矛盾解决，但番外本身又带出一个新问题——番外里男二的同行者，正文从未提过。</p>
+          <p>《旧楼梯间》的做法相反。婚后番外拆成 6 个短篇，每篇独立，不承担补漏功能，只写日常。已放出 3 篇，读者对第 1 篇「搬家」评价最高，对第 2 篇「年夜饭」评价一般，理由是出场亲戚太多、名字记不住。番外要不要承担解释正文的功能，两部作品给出了两种答案，也各自付出了代价。</p>
+
+          <h3>怎么判断一部在更作品值不值得现在追</h3>
+          <p>看三个可核对的东西。第一，最近四周的更新是否稳定：把 4 周内的章节发布日期列出来，间隔是否均匀，有没有连续两周只更一章。《春分之后》10 月中旬有一周停更，作者当时未说明原因，11 月 3 日才在评论区回应节奏问题。第二，单章是否自带小结：章节末尾有没有一句交代「这章推进了什么」，有的话补更时能快速定位。《雾港三年》第 41 章末尾留了竞标结果未交代，属于故意吊着。第三，番外是否已排期：正文完结但番外无排期的作品，补完时间往往拖到三个月以上。</p>
+          <table>
+            <thead><tr><th>作品</th><th>单章字数</th><th>近四周更新</th><th>番外状态</th></tr></thead>
+            <tbody>
+              <tr><td>雾港三年</td><td>约 3100</td><td>12 章</td><td>11 月中旬排期</td></tr>
+              <tr><td>春分之后</td><td>约 2900</td><td>7 章（含一周停更）</td><td>未公布</td></tr>
+              <tr><td>四楼没有灯</td><td>约 2400</td><td>14 章</td><td>未公布</td></tr>
+              <tr><td>旧楼梯间</td><td>约 2100</td><td>3 篇番外</td><td>6 篇已放 3 篇</td></tr>
+            </tbody>
+          </table>
+          <p>这张表只能解决「现在追会不会断更」的问题，解决不了「值不值得读」。后者还是得回到具体章节：第 41 章那场离职谈话写得好不好，取决于读者在不在意男女主谁先开口。这类判断没有统一答案。</p>
+        </div>
+      </section>
+
+      <!-- 6 追更指南 -->
+      <section class="section" id="guide">
+        <div class="section-head">
+          <h2>补更顺序与投入判断</h2>
+          <span class="sub">体验指南</span>
+        </div>
+        <ol class="steps">
+          <li><b>先看类型再看字数</b>职场群像和邻里生活适合连续读，悬疑复合适合单章追。把《雾港三年》攒到周末一次读四章，比每天读一章更容易记住谁调了岗。</li>
+          <li><b>正文完结的先查番外排期</b>《迟到的第十一封》番外二已上线，可以读完正文直接接；《旧楼梯间》番外 6 篇只放了 3 篇，剩下 3 篇没有明确日期，介意的话先停在正文结尾。</li>
+          <li><b>用配角名单判断要不要补前文</b>出场超过 5 个有名有姓的配角，建议先把上一章结尾重读一遍。少于 3 个，直接往下读不会乱。</li>
+          <li><b>比较同类条目看冲突来源</b>《旧楼梯间》的冲突来自物业费和噪音，《春分之后》来自夫妻沟通方式。前者靠外部事件推进，后者靠对话推进。喜欢看事的选前者，喜欢看人的选后者。</li>
+          <li><b>停更超过两周先别追</b>《春分之后》10 月中旬停更一周，恢复后连更两章补进度。连续停更的作品，恢复后的章节往往信息密度偏高，补更时容易漏线索。</li>
+        </ol>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="section" id="faq">
+        <div class="section-head">
+          <h2>追更常问的 6 个问题</h2>
+          <span class="sub">常见问答</span>
+        </div>
+
+        <details class="faq-item">
+          <summary>《迟到的第十一封》番外二补的是哪段时间线？</summary>
+          <div class="faq-a">补的是 2016 年 6 月 3 日当天，男二从上午到深夜的行踪，约 4200 字。正文第 47 章写他当天在外地，番外二给出的是他上午在外地、傍晚回到旧城区的版本，矛盾由此解释。番外末尾还出现了一个正文没提过的同行者。</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>《雾港三年》第 41 章之后竞标结果什么时候交代？</summary>
+          <div class="faq-a">作者在 11 月 7 日章末未给出时间，评论区只说到「下一章见分晓」。按周更三章的节奏，第 42 章预计 11 月 10 日前后更新。竞标结果牵涉男女主是否同时留任，是离职谈话的直接前提。</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>《旧楼梯间》婚后番外一共几篇，现在放了几篇？</summary>
+          <div class="faq-a">计划 6 篇，已放出 3 篇，分别是「搬家」「年夜饭」「物业费」，每篇约 2000 至 2100 字。剩下 3 篇没有公布具体日期，作者只在评论区说「陆续放出」。三篇可以独立阅读，不按顺序也不影响理解。</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>《春分之后》男方视角连续四章是怎么回事？</summary>
+          <div class="faq-a">第 19 到 21 章连续用男方视角，第 22 章回到女方视角。读者在评论区指出连续男方视角让夫妻沟通的落差感变弱，作者 11 月 3 日回应称会调整后续视角分配，但没有说明从哪一章开始调整。</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>《四楼没有灯》的线索主要靠什么推进？</summary>
+          <div class="faq-a">靠水电费单、快递记录和门牌号这三类日常凭证。第 28 章「水费单」是第一次让女主进入楼上住户房间，此前 27 章都只在外围打转。单章 2400 字左右，隔日更，适合单章追。</div>
+        </details>
+
+        <details class="faq-item">
+          <summary>《南站最后一班》第 55 章倒叙有没有必要看？</summary>
+          <div class="faq-a">这章 3400 字，写 2019 年女主第一段婚姻的开始，主线推进为零。追更的人当天在评论区问主线，补更的人攒三章一起看觉得有必要。如果只关心 2026 年重逢线，可以跳过，但后面两章会引用这章的一个细节。</div>
+        </details>
+      </section>
+
+      <!-- 8 读者评论 -->
+      <section class="section" id="comments">
+        <div class="section-head">
+          <h2>读者怎么说</h2>
+          <span class="sub">16 条 · 近 7 天</span>
+        </div>
+        <div class="comment-grid">
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">荔</span><span class="nick">荔枝不剥皮</span><span class="cm-time">11-08</span></div>
+            <p>番外二把 47 章那个时间矛盾补上了，但新出现的同行者是谁啊，正文翻了两遍没找到。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">港</span><span class="nick">港务小陈</span><span class="cm-time">11-08</span></div>
+            <p>41 章那场离职谈话写得好，两个人谁都没先提留下，全靠一句「你先说」撑着。周更三章我能接受。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">阿</span><span class="nick">阿岚在补更</span><span class="cm-time">11-07</span></div>
+            <p>《雾港三年》第 40 章出场 7 个同事，我记了半页纸。字数少但人太多，反而累。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">南</span><span class="nick">南站常客</span><span class="cm-time">11-07</span></div>
+            <p>55 章倒叙我直接跳了，结果 56 章引用里面的细节，又翻回去看。建议别跳。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">楼</span><span class="nick">楼道灯坏了</span><span class="cm-time">11-06</span></div>
+            <p>《旧楼梯间》物业费那篇太真实了，我们楼也是这样，一家垫钱三家拖。番外比正文还好看。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">春</span><span class="nick">春分那天</span><span class="cm-time">11-06</span></div>
+            <p>连续四章男方视角确实拖。不是不能写男方，是四章里没有一件事真正推进。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">四</span><span class="nick">四楼住户</span><span class="cm-time">11-05</span></div>
+            <p>水费单这条线索有点巧，但隔日更能接受，2400 字一章正好通勤读完。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">白</span><span class="nick">白露未晞</span><span class="cm-time">11-05</span></div>
+            <p>《白露为霜》周更一章太慢，第 14 章书店关门那段写得好，但等一周就等到这个，有点亏。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">搬</span><span class="nick">第七个纸箱</span><span class="cm-time">11-04</span></div>
+            <p>《合租第三个月》补的 600 字结尾我看了，把之前没交代的押金问题说清楚了，值。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">小</span><span class="nick">小满不忙</span><span class="cm-time">11-04</span></div>
+            <p>不太在意字数，在意断在哪。断在关键处一章 2000 字也难受，断在收尾 5000 字也舒服。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">十</span><span class="nick">十一封信</span><span class="cm-time">11-03</span></div>
+            <p>正文完结三个月才补番外，等得有点久。不过番外二质量在线，原谅了。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">案</span><span class="nick">案头一摞书</span><span class="cm-time">11-03</span></div>
+            <p>悬疑线最怕补漏补出新坑。番外二那个同行者，希望别是第三个案子。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">今</span><span class="nick">今天也没睡好</span><span class="cm-time">11-02</span></div>
+            <p>最近看的几本都开始变短了，不知道是不是平台要求。反正我通勤读正好。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">雾</span><span class="nick">雾里看标</span><span class="cm-time">11-02</span></div>
+            <p>《雾港三年》配角番外说 8000 字，男二视角，希望别写成流水账。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">年</span><span class="nick">年夜饭那篇</span><span class="cm-time">11-01</span></div>
+            <p>番外第 2 篇亲戚太多，名字记不住，看完只记得桌上有一条鱼。</p>
+          </div>
+
+          <div class="comment">
+            <div class="cm-head"><span class="avatar">路</span><span class="nick">路过看一眼</span><span class="cm-time">11-01</span></div>
+            <p>路过，最近没空追，先存着。等完结一起看。</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 9 相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-head">
+          <h2>近期连载动态</h2>
+          <span class="sub">11 月 1 日至 8 日</span>
+        </div>
+        <div class="news-list">
+
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news1108/600/400" width="600" height="400" loading="lazy" alt="《迟到的第十一封》番外二上线相关报道配图">
+            <div class="news-body">
+              <span class="news-date">2026-11-08</span>
+              <h3><a href="#updates">《迟到的第十一封》番外二上线，补 2016 年 6 月 3 日时间线</a></h3>
+              <p>番外二约 4200 字，作者在文末注明「此处与正文第 47 章对应」，并确认番外三将写女主 2017 年离开旧城区那半年，暂定 12 月上线。</p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news1107/600/400" width="600" height="400" loading="lazy" alt="《雾港三年》第 41 章更新与竞标线报道配图">
+            <div class="news-body">
+              <span class="news-date">2026-11-07</span>
+              <h3><a href="#updates">《雾港三年》第 41 章深夜更新，竞标结果延后一章</a></h3>
+              <p>23 时 40 分更新，单章约 3100 字。作者在评论区回复读者称第 42 章会给出竞标结果，同时确认男二视角番外篇幅约 8000 字，11 月中旬单独开标签。</p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news1105/600/400" width="600" height="400" loading="lazy" alt="《春分之后》作者回应节奏争议报道配图">
+            <div class="news-body">
+              <span class="news-date">2026-11-05</span>
+              <h3><a href="#comments">《春分之后》作者回应视角争议，称后续缩短男方连续篇幅</a></h3>
+              <p>作者在章末说明中承认第 19 至 21 章连续男方视角「读起来可能有点闷」，表示后续会控制在两章以内，但未公布从哪一章开始执行。</p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news1104/600/400" width="600" height="400" loading="lazy" alt="《旧楼梯间》婚后番外三篇上线报道配图">
+            <div class="news-body">
+              <span class="news-date">2026-11-04</span>
+              <h3><a href="#updates">《旧楼梯间》婚后番外已放 3 篇，剩余 3 篇无排期</a></h3>
+              <p>已上线「搬家」「年夜饭」「物业费」三篇，每篇约 2000 至 2100 字。作者在评论区表示剩余 3 篇会「陆续放出」，未给出月份，正文完结于 2026 年 9 月。</p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news1102/600/400" width="600" height="400" loading="lazy" alt="《第七次搬家》第 4 篇修订版上线报道配图">
+            <div class="news-body">
+              <span class="news-date">2026-11-02</span>
+              <h3><a href="#rank">《第七次搬家》修订第 4 篇，补 600 字合租后续</a></h3>
+              <p>补写部分集中在押金退还和室友去向，作者称是应读者在 10 月下旬的留言要求补的。修订版上线后，第 4 篇成为 7 篇中篇幅最长的一篇，约 1.1 万字。</p>
+            </div>
+          </article>
+
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news1101/600/400" width="600" height="400" loading="lazy" alt="《四楼没有灯》隔日更节奏与线索推进报道配图">
+            <div class="news-body">
+              <span class="news-date">2026-11-01</span>
+              <h3><a href="#faq">《四楼没有灯》保持隔日更，第 28 章进入楼上住户房间</a></h3>
+              <p>第 28 章约 2400 字，女主首次进入楼上住户房间，线索从水电费单推进到门牌号。作者在评论区称后续会引入第三名住户，具体章节未定。</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="section" id="rec">
+        <div class="section-head">
+          <h2>按内容方向找</h2>
+          <span class="sub">标签索引</span>
+        </div>
+        <div class="rec-tags">
+          <a class="rec-tag" href="#featured">港务系统职场文 <b>9.1</b></a>
+          <a class="rec-tag" href="#featured">信件驱动的旧案追查 <b>9.4</b></a>
+          <a class="rec-tag" href="#featured">老小区邻里冲突 <b>8.8</b></a>
+          <a class="rec-tag" href="#featured">跨八年重逢线 <b>8.5</b></a>
+          <a class="rec-tag" href="#featured">夫妻双视角生活流 <b>8.2</b></a>
+          <a class="rec-tag" href="#featured">独居悬疑短章 <b>8.0</b></a>
+          <a class="rec-tag" href="#featured">江南小城慢热 <b>7.6</b></a>
+          <a class="rec-tag" href="#updates">婚后番外短篇集 <b>8.8</b></a>
+        </div>
+      </section>
+
+      <!-- 11 热度榜单 -->
+      <section class="section" id="rank">
+        <div class="section-head">
+          <h2>11 月首周热度榜</h2>
+          <span class="sub">按评论数与追更人数加权</span>
+        </div>
+        <ol class="rank-list">
+          <li><span class="rk-name">迟到的第十一封<small>番外二带动正文回读，评论 1840 条</small></span><span class="rk-score">9.4</span></li>
+          <li><span class="rk-name">雾港三年<small>第 41 章单章评论 620 条，追更 3.1 万</small></span><span class="rk-score">9.1</span></li>
+          <li><span class="rk-name">旧楼梯间<small>番外第 3 篇评论 410 条，收藏涨 12%</small></span><span class="rk-score">8.8</span></li>
+          <li><span class="rk-name">南站最后一班<small>第 55 章倒叙争议，评论 530 条</small></span><span class="rk-score">8.5</span></li>
+          <li><span class="rk-name">春分之后<small>视角争议后评论量翻倍，追更 1.8 万</small></span><span class="rk-score">8.2</span></li>
+          <li><span class="rk-name">四楼没有灯<small>隔日更稳定，评论 380 条</small></span><span class="rk-score">8.0</span></li>
+          <li><span class="rk-name">第七次搬家<small>第 4 篇修订后回读量上升</small></span><span class="rk-score">7.9</span></li>
+          <li><span class="rk-name">白露为霜<small>周更一章，评论 190 条</small></span><span class="rk-score">7.6</span></li>
+        </ol>
+      </section>
+
+      <!-- 12 投稿互动 -->
+      <section class="section" id="interact">
+        <div class="interact">
+          <div>
+            <h2>书评投稿与追更交流</h2>
+            <p>写单章拆解、番外时间线梳理或避雷清单都可以。字数 300 至 800 字，注明作品名和章节号，采用后会挂在对应条目下。</p>
+          </div>
+          <div class="acts">
+            <button class="btn-main" type="button" data-jump="#comments">查看已收录书评</button>
+            <button class="btn-line" type="button" data-jump="#faq">先看问答</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 右辅助栏 -->
+    <aside class="aside-col" aria-label="辅助信息">
+
+      <div class="side-card">
+        <h2>今日更新速览</h2>
+        <ul class="side-list">
+          <li><span class="idx">01</span><a href="#updates">迟到的第十一封 · 番外二</a></li>
+          <li><span class="idx">02</span><a href="#updates">雾港三年 · 第 41 章</a></li>
+          <li><span class="idx">03</span><a href="#updates">旧楼梯间 · 番外第 3 篇</a></li>
+          <li><span class="idx">04</span><a href="#updates">四楼没有灯 · 第 28 章</a></li>
+          <li><span class="idx">05</span><a href="#updates">南站最后一班 · 第 55 章</a></li>
+        </ul>
+        <p class="side-note">以上条目均在 11 月 8 日或之前更新，可按章节号回查。</p>
+      </div>
+
+      <div class="side-card">
+        <h2>番外排期</h2>
+        <ul class="side-list">
+          <li><span class="idx">已上</span><a href="#featured">迟到的第十一封 番外二</a></li>
+          <li><span class="idx">已上</span><a href="#featured">旧楼梯间 番外 1—3</a></li>
+          <li><span class="idx">11中</span><a href="#featured">雾港三年 男二视角</a></li>
+          <li><span class="idx">12月</span><a href="#featured">迟到的第十一封 番外三</a></li>
+          <li><span class="idx">未定</span><a href="#featured">旧楼梯间 番外 4—6</a></li>
+        </ul>
+      </div>
+
+      <div class="side-card">
+        <h2>热门类型</h2>
+        <div class="side-tags">
+          <a href="#featured">职场群像</a>
+          <a href="#featured">悬疑复合</a>
+          <a href="#featured">邻里生活</a>
+          <a href="#featured">重逢克制</a>
+          <a href="#featured">婚内日常</a>
+          <a href="#featured">青梅竹马</a>
+          <a href="#updates">番外补完</a>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <h2>避雷提示</h2>
+        <ul class="side-list">
+          <li><span class="idx">·</span>《春分之后》第 19—21 章连续男方视角</li>
+          <li><span class="idx">·</span>《南站最后一班》第 55 章主线推进为零</li>
+          <li><span class="idx">·</span>《白露为霜》前三章几乎无冲突</li>
+          <li><span class="idx">·</span>《旧楼梯间》番外第 2 篇出场亲戚多</li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </div>
+</main>
+
+<!-- 页尾 -->
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">高莜柔阅读</div>
+        <p class="foot-brand-desc">覆盖 2026 年 8 月至 11 月的都市言情连载条目，含正文、番外、配角视角三类内容，更新节奏以周为单位跟踪，番外排期随作者公告同步。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容板块</h4>
+        <ul>
+          <li><a href="#overview">领域概览</a></li>
+          <li><a href="#featured">精选书单</a></li>
+          <li><a href="#updates">更新动态</a></li>
+          <li><a href="#deep">深度解析</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>追更工具</h4>
+        <ul>
+          <li><a href="#guide">补更顺序</a></li>
+          <li><a href="#faq">常见问答</a></li>
+          <li><a href="#rank">热度榜单</a></li>
+          <li><a href="#rec">标签索引</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>参与</h4>
+        <ul>
+          <li><a href="#interact">书评投稿</a></li>
+          <li><a href="#comments">读者评论</a></li>
+          <li><a href="#news">近期动态</a></li>
+          <li><a href="#category">类型筛选</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>页面条目为内容聚合示例，书名、章节与数据用于展示分类与追更结构。</span>
+      <span>最近核对：2026-11-08 · 对应条目《迟到的第十一封》番外二</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 平滑跳转（预留吸顶高度由 CSS scroll-padding 处理） */
+  document.querySelectorAll('[data-jump]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = document.querySelector(btn.getAttribute('data-jump'));
+      if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+      closeDrawer();
+    });
+  });
+
+  /* 移动抽屉 */
+  var drawer = document.getElementById('drawer');
+  var mask = document.getElementById('drawerMask');
+  var hamburger = document.getElementById('hamburger');
+  var drawerClose = document.getElementById('drawerClose');
+
+  function openDrawer(){
+    drawer.classList.add('open');
+    mask.classList.add('open');
+    hamburger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+    drawerClose.focus();
+  }
+  function closeDrawer(){
+    if(!drawer.classList.contains('open')) return;
+    drawer.classList.remove('open');
+    mask.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', function(){
+    if(drawer.classList.contains('open')){ closeDrawer(); } else { openDrawer(); }
+  });
+  drawerClose.addEventListener('click', closeDrawer);
+  mask.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeDrawer(); }
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeDrawer);
+  });
+
+  /* 搜索过滤精选卡片 */
+  var searchInput = document.getElementById('siteSearch');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#featuredGrid .card'));
+  var emptyTip = document.getElementById('featuredEmpty');
+
+  function applyFilter(kw){
+    var q = (kw || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(card){
+      var text = (card.getAttribute('data-key') || '') + card.textContent;
+      var hit = !q || text.toLowerCase().indexOf(q) !== -1;
+      card.style.display = hit ? '' : 'none';
+      if(hit) shown++;
+    });
+    if(emptyTip) emptyTip.style.display = (q && shown === 0) ? 'block' : 'none';
+  }
+
+  if(searchInput){
+    searchInput.addEventListener('input', function(){
+      applyFilter(searchInput.value);
+    });
+  }
+
+  /* 类型筛选按钮 */
+  var catBar = document.getElementById('catBar');
+  if(catBar){
+    catBar.addEventListener('click', function(e){
+      var btn = e.target.closest('.filter-btn');
+      if(!btn) return;
+      catBar.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.getAttribute('data-filter');
+      if(f === 'all'){
+        applyFilter('');
+        if(searchInput) searchInput.value = '';
+      } else {
+        applyFilter(f);
+        if(searchInput) searchInput.value = '';
+        var featured = document.getElementById('featured');
+        if(featured) featured.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  }
+
+  /* 回到顶部 */
+  var toTop = document.getElementById('toTop');
+  function onScroll(){
+    if(window.scrollY > window.innerHeight * 0.9){
+      toTop.classList.add('show');
+    } else {
+      toTop.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  /* 侧栏频道高亮 */
+  var navLinks = document.querySelectorAll('.channel-list a[href^="#"]');
+  var sections = [];
+  navLinks.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var sec = document.getElementById(id);
+    if(sec) sections.push({id:id, el:sec, link:a});
+  });
+  if('IntersectionObserver' in window && sections.length){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          sections.forEach(function(s){
+            if(s.el === entry.target){
+              navLinks.forEach(function(l){ l.classList.remove('current'); });
+              s.link.classList.add('current');
+            }
+          });
+        }
+      });
+    }, {rootMargin:'-30% 0px -60% 0px', threshold:0});
+    sections.forEach(function(s){ observer.observe(s.el); });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "高莜柔阅读",
+  "about": "都市言情连载书单、番外排期与追更指南",
+  "inLanguage": "zh-CN",
+  "description": "聚合都市言情连载书单、番外补完顺序与角色关系梳理，含更新进度、读者评论与章节避雷提示。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "《迟到的第十一封》番外二补的是哪段时间线？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "补的是 2016 年 6 月 3 日当天，男二从上午到深夜的行踪，约 4200 字。正文第 47 章写他当天在外地，番外二给出的是他上午在外地、傍晚回到旧城区的版本，矛盾由此解释。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《雾港三年》第 41 章之后竞标结果什么时候交代？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "作者在 11 月 7 日章末未给出时间，评论区只说到下一章见分晓。按周更三章的节奏，第 42 章预计 11 月 10 日前后更新。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《旧楼梯间》婚后番外一共几篇，现在放了几篇？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "计划 6 篇，已放出 3 篇，分别是搬家、年夜饭、物业费，每篇约 2000 至 2100 字。剩下 3 篇没有公布具体日期。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《春分之后》男方视角连续四章是怎么回事？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "第 19 到 21 章连续用男方视角，第 22 章回到女方视角。作者 11 月 3 日回应称会调整后续视角分配，但没有说明从哪一章开始调整。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《四楼没有灯》的线索主要靠什么推进？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "靠水电费单、快递记录和门牌号这三类日常凭证。第 28 章水费单是第一次让女主进入楼上住户房间，此前 27 章都只在外围打转。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "《南站最后一班》第 55 章倒叙有没有必要看？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "这章 3400 字，写 2019 年女主第一段婚姻的开始，主线推进为零。如果只关心 2026 年重逢线，可以跳过，但后面两章会引用这章的一个细节。"
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+  </html>
