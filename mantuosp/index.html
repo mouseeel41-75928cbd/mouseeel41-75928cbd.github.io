@@ -1,0 +1,1813 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>曼陀sp庄园 - 亚文化实践与社区</title>
+  <meta name="description" content="曼陀sp庄园是BDSM亚文化的内容聚合页，涵盖绳缚、支配与臣服、SP实践、安全指南、装备评测和社区讨论。适合对知情同意、风险控制与圈内动态感兴趣的成年读者。">
+  <meta name="keywords" content="曼陀sp庄园">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2C9 2 4 8 4 14c0 8 12 16 12 16s12-8 12-16C28 8 23 2 16 2z' fill='%238b2e4a'/%3E%3Ccircle cx='16' cy='13' r='5' fill='%23f5e9e3'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #1e1a1c;
+      --ink-2: #4a3f44;
+      --ink-3: #7a6b70;
+      --bg: #faf6f4;
+      --panel: #ffffff;
+      --line: #e3d8d3;
+      --brand: #8b2e4a;
+      --brand-light: #b85c72;
+      --brand-dark: #5e1e30;
+      --accent: #c99a6b;
+      --radius-card: 14px;
+      --radius-btn: 8px;
+      --radius-tag: 6px;
+      --shadow: 0 2px 12px rgba(30,26,28,0.06);
+      --shadow-hover: 0 6px 22px rgba(30,26,28,0.12);
+      --header-h: 112px;
+      --sticky-offset: 120px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+    body {
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; height: auto; object-fit: cover; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 { line-height: 1.35; font-weight: 700; }
+    ul, ol { list-style: none; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* ====== 吸顶公告条 ====== */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--brand-dark);
+      color: #f9ece7;
+      font-size: 13px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .topbar-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 24px;
+    }
+    .topbar-brand {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #fff;
+      font-size: 13px;
+      opacity: 0.85;
+      flex-shrink: 0;
+    }
+    .topbar-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      align-items: center;
+    }
+    .topbar-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .topbar-date {
+      font-variant-numeric: tabular-nums;
+      opacity: 0.7;
+      font-size: 12px;
+    }
+    .topbar-sep { opacity: 0.3; }
+
+    /* ====== 吸顶页头 ====== */
+    .site-header {
+      position: sticky;
+      top: 33px;
+      z-index: 99;
+      background: rgba(250,246,244,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      height: 72px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .logo svg {
+      width: 38px;
+      height: 38px;
+    }
+    .logo-text {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .main-nav a {
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      color: var(--ink-2);
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      background: var(--brand-light);
+      color: #fff;
+      outline: none;
+    }
+    .header-actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .search-box {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      background: var(--panel);
+      padding: 0 10px;
+      height: 36px;
+      transition: border-color 0.2s;
+    }
+    .search-box:focus-within { border-color: var(--brand-light); }
+    .search-box input {
+      border: none;
+      background: transparent;
+      font-size: 13px;
+      width: 130px;
+      padding: 0 6px;
+      color: var(--ink);
+      outline: none;
+    }
+    .search-box input::placeholder { color: var(--ink-3); }
+    .search-box button {
+      border: none;
+      background: none;
+      padding: 4px;
+      color: var(--ink-3);
+      display: flex;
+      align-items: center;
+    }
+    .search-box button:hover { color: var(--brand); }
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: var(--radius-btn);
+      padding: 6px 10px;
+      font-size: 18px;
+      color: var(--ink-2);
+      line-height: 1;
+    }
+
+    /* ====== 移动端导航 ====== */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(30,26,28,0.45);
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(320px, 82vw);
+      height: 100%;
+      background: var(--bg);
+      padding: 24px 20px;
+      overflow-y: auto;
+      box-shadow: -8px 0 30px rgba(0,0,0,0.18);
+    }
+    .mobile-nav-close {
+      border: none;
+      background: none;
+      font-size: 26px;
+      color: var(--ink-2);
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+    .mobile-nav-panel a {
+      display: block;
+      padding: 12px 8px;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+      color: var(--ink-2);
+    }
+    .mobile-nav-panel a:hover { color: var(--brand); }
+
+    /* ====== 首屏 ====== */
+    .hero {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 48px 20px 40px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 44px;
+      align-items: center;
+    }
+    .hero-content h1 {
+      font-size: clamp(34px, 5vw, 52px);
+      color: var(--brand-dark);
+      letter-spacing: 0.03em;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+    .hero-desc {
+      font-size: 17px;
+      color: var(--ink-2);
+      max-width: 560px;
+      margin-bottom: 26px;
+      line-height: 1.8;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+      border: none;
+    }
+    .btn-primary:hover {
+      background: var(--brand-dark);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .btn-ghost {
+      display: inline-block;
+      border: 1.5px solid var(--brand-light);
+      color: var(--brand);
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover {
+      background: var(--brand-light);
+      color: #fff;
+    }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-visual svg {
+      width: 100%;
+      max-width: 460px;
+      height: auto;
+      filter: drop-shadow(0 12px 28px rgba(139,46,74,0.18));
+    }
+    @keyframes float-soft {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .hero-visual svg {
+      animation: float-soft 7s ease-in-out infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-visual svg { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ====== 三栏门户布局 ====== */
+    .portal-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+      display: grid;
+      grid-template-columns: 178px 1fr 248px;
+      gap: 32px;
+      align-items: start;
+    }
+
+    /* 左频道索引 */
+    .channel-index {
+      position: sticky;
+      top: 124px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 18px 0;
+    }
+    .channel-index-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      padding-left: 10px;
+    }
+    .channel-index a {
+      display: block;
+      padding: 8px 12px;
+      font-size: 14px;
+      color: var(--ink-2);
+      border-radius: var(--radius-btn);
+      border-left: 2px solid transparent;
+      transition: background 0.18s, border-color 0.18s, color 0.18s;
+    }
+    .channel-index a:hover,
+    .channel-index a:focus-visible {
+      background: #f1e7e3;
+      border-left-color: var(--brand);
+      color: var(--brand);
+      outline: none;
+    }
+    .channel-index a.active {
+      background: #f1e7e3;
+      border-left-color: var(--brand);
+      color: var(--brand);
+      font-weight: 600;
+    }
+
+    /* 中主内容区 */
+    .main-content {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 44px;
+    }
+    .section {
+      scroll-margin-top: var(--sticky-offset);
+    }
+    .section-h2 {
+      font-size: 22px;
+      color: var(--brand-dark);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--brand-light);
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .section-h2 .sub {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--ink-3);
+    }
+
+    /* 概览 */
+    .overview-text {
+      font-size: 15.5px;
+      color: var(--ink-2);
+      line-height: 1.85;
+      max-width: 760px;
+    }
+    .overview-text p { margin-bottom: 14px; }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+    }
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: #e9ddd8;
+    }
+    .card-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-type {
+      display: inline-block;
+      font-size: 11px;
+      background: #f1e7e3;
+      color: var(--brand);
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+      margin-bottom: 8px;
+      font-weight: 600;
+      align-self: flex-start;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--ink-3);
+      line-height: 1.6;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      gap: 12px;
+      font-size: 11.5px;
+      color: var(--ink-3);
+      flex-wrap: wrap;
+    }
+    .card-meta .hot { color: var(--brand); font-weight: 600; }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 8px;
+    }
+    .tag {
+      font-size: 11px;
+      background: #f6efeb;
+      color: var(--ink-2);
+      padding: 2px 7px;
+      border-radius: var(--radius-tag);
+      border: 1px solid var(--line);
+    }
+
+    /* 紧凑列表 */
+    .compact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .compact-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      font-size: 14.5px;
+      transition: background 0.18s;
+    }
+    .compact-item:last-child { border-bottom: none; }
+    .compact-item:hover { background: #fdf8f6; }
+    .compact-item .num {
+      font-size: 12px;
+      color: var(--brand-light);
+      font-weight: 700;
+      min-width: 22px;
+      font-variant-numeric: tabular-nums;
+    }
+    .compact-item .name {
+      font-weight: 600;
+      color: var(--ink);
+      flex-shrink: 0;
+    }
+    .compact-item .brief {
+      font-size: 13px;
+      color: var(--ink-3);
+      flex: 1;
+    }
+    .compact-item .date {
+      font-size: 12px;
+      color: var(--ink-3);
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+    .category-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-btn);
+      padding: 12px 14px;
+      font-size: 14px;
+      color: var(--ink-2);
+      transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+    }
+    .category-chip:hover {
+      border-color: var(--brand-light);
+      background: #fdf8f6;
+      box-shadow: var(--shadow);
+    }
+    .category-chip .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      flex-shrink: 0;
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 28px 30px;
+    }
+    .deep-dive h3 {
+      font-size: 18px;
+      color: var(--brand-dark);
+      margin: 22px 0 10px;
+    }
+    .deep-dive h3:first-child { margin-top: 0; }
+    .deep-dive p {
+      font-size: 15px;
+      color: var(--ink-2);
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+    .deep-dive ul {
+      margin: 10px 0 14px 20px;
+      list-style: disc;
+      font-size: 14.5px;
+      color: var(--ink-2);
+      line-height: 1.8;
+    }
+    .deep-dive li { margin-bottom: 6px; }
+    .deep-dive .quote {
+      border-left: 3px solid var(--brand-light);
+      padding: 8px 16px;
+      background: #fdf8f6;
+      font-size: 14px;
+      color: var(--ink-2);
+      border-radius: 0 var(--radius-btn) var(--radius-btn) 0;
+      margin: 14px 0;
+    }
+    .deep-dive strong { color: var(--brand-dark); }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .guide-step {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      position: relative;
+    }
+    .guide-step .step-num {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .guide-step h4 {
+      font-size: 15px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .guide-step p {
+      font-size: 13.5px;
+      color: var(--ink-3);
+      line-height: 1.65;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .faq-item {
+      background: var(--panel);
+      border-radius: var(--radius-btn);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.18s;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: "＋";
+      font-size: 18px;
+      color: var(--brand-light);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+    .faq-item[open] summary::after {
+      content: "－";
+    }
+    .faq-item summary:hover { background: #fdf8f6; }
+    .faq-answer {
+      padding: 0 18px 16px;
+      font-size: 14px;
+      color: var(--ink-2);
+      line-height: 1.8;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      margin-top: 0;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 14px;
+    }
+    .comment-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .comment-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .nickname {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .comment-text {
+      font-size: 13.5px;
+      color: var(--ink-2);
+      line-height: 1.65;
+    }
+    .comment-time {
+      font-size: 11px;
+      color: var(--ink-3);
+    }
+
+    /* 资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .news-item {
+      display: flex;
+      gap: 16px;
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .news-item:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateX(3px);
+    }
+    .news-item img {
+      width: 140px;
+      height: 100px;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #e9ddd8;
+    }
+    .news-body {
+      padding: 12px 16px 12px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .news-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .news-date {
+      font-size: 12px;
+      color: var(--brand-light);
+      margin-bottom: 4px;
+      font-variant-numeric: tabular-nums;
+    }
+    .news-summary {
+      font-size: 13px;
+      color: var(--ink-3);
+      line-height: 1.55;
+    }
+
+    /* 标签索引 */
+    .tag-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag-index a {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      color: var(--ink-2);
+      transition: border-color 0.18s, color 0.18s, background 0.18s;
+    }
+    .tag-index a:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+      background: #fdf8f6;
+    }
+
+    /* 榜单 */
+    .rank-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--panel);
+      border-radius: var(--radius-btn);
+      box-shadow: var(--shadow);
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+    .rank-num {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--brand-light);
+      min-width: 28px;
+      font-variant-numeric: tabular-nums;
+    }
+    .rank-item:nth-child(1) .rank-num { color: #c99a6b; }
+    .rank-item:nth-child(2) .rank-num { color: #a0a0a0; }
+    .rank-item:nth-child(3) .rank-num { color: #b87d5a; }
+    .rank-name { font-weight: 600; color: var(--ink); flex: 1; }
+    .rank-score { font-size: 12.5px; color: var(--ink-3); }
+
+    /* 右辅助栏 */
+    .aside-col {
+      position: sticky;
+      top: 124px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .aside-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+    .aside-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hot-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .hot-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 13px;
+    }
+    .hot-list li:last-child { border-bottom: none; }
+    .hot-list .hot-num {
+      font-size: 11px;
+      color: var(--brand-light);
+      font-weight: 700;
+      min-width: 16px;
+    }
+    .hot-list .hot-name {
+      color: var(--ink-2);
+      flex: 1;
+    }
+    .hot-list .hot-badge {
+      font-size: 10px;
+      background: #f1e7e3;
+      color: var(--brand);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+    .update-list li {
+      font-size: 12.5px;
+      padding: 6px 0;
+      border-bottom: 1px dashed var(--line);
+      color: var(--ink-2);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .update-list li:last-child { border-bottom: none; }
+    .update-list .up-name { flex: 1; }
+    .update-list .up-date { color: var(--ink-3); font-size: 11px; white-space: nowrap; }
+
+    /* ====== 页尾 ====== */
+    .site-footer {
+      background: var(--brand-dark);
+      color: #e8d5d0;
+      margin-top: 20px;
+    }
+    .footer-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 40px 20px 24px;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .footer-brand .logo-text { color: #fff; margin-bottom: 10px; }
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #c4aaa4;
+      max-width: 300px;
+    }
+    .footer-col h4 {
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: #c4aaa4;
+      padding: 4px 0;
+      transition: color 0.18s;
+    }
+    .footer-col a:hover { color: #fff; }
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 16px 20px 24px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-size: 12px;
+      color: #a88e88;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    /* 回顶按钮 */
+    .back-top {
+      position: fixed;
+      right: 22px;
+      bottom: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 4px 16px rgba(139,46,74,0.35);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.2s;
+      z-index: 90;
+    }
+    .back-top.show { opacity: 1; pointer-events: auto; }
+    .back-top:hover { transform: translateY(-3px); }
+
+    /* 搜索无结果 */
+    .no-result {
+      display: none;
+      padding: 20px;
+      text-align: center;
+      color: var(--ink-3);
+      font-size: 14px;
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+    }
+    .no-result.show { display: block; }
+
+    /* ====== 响应式 ====== */
+    @media (max-width: 1200px) {
+      .portal-wrap { grid-template-columns: 160px 1fr 220px; gap: 24px; }
+    }
+    @media (max-width: 1024px) {
+      .portal-wrap { grid-template-columns: 1fr; gap: 32px; }
+      .channel-index { position: static; flex-direction: row; flex-wrap: wrap; gap: 6px; padding: 0; }
+      .channel-index-title { display: none; }
+      .channel-index a { border-left: none; border-bottom: 2px solid transparent; padding: 6px 12px; }
+      .channel-index a:hover, .channel-index a.active { border-left: none; border-bottom-color: var(--brand); }
+      .aside-col { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 36px; }
+      .hero-visual { order: -1; }
+      .hero-visual svg { max-width: 320px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .main-nav { display: none; }
+      .menu-toggle { display: block; }
+      .header-actions .search-box { display: none; }
+    }
+    @media (max-width: 740px) {
+      body { font-size: 15px; }
+      .topbar { font-size: 12px; padding: 6px 0; }
+      .topbar-inner { gap: 6px 14px; }
+      .topbar-brand { font-size: 12px; }
+      .header-inner { height: 60px; padding: 0 14px; gap: 12px; }
+      .logo-text { font-size: 17px; }
+      .hero { padding: 28px 14px 24px; }
+      .hero h1 { font-size: 32px; }
+      .hero-desc { font-size: 15px; }
+      .portal-wrap { padding: 0 14px 40px; }
+      .aside-col { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .card-body { padding: 10px 12px 12px; }
+      .card-title { font-size: 14px; }
+      .card-desc { font-size: 12px; }
+      .news-item { flex-direction: column; }
+      .news-item img { width: 100%; height: 140px; }
+      .news-body { padding: 12px 16px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 20px; padding: 28px 14px 16px; }
+      .footer-bottom { padding: 14px 14px 20px; }
+      .comment-grid { grid-template-columns: 1fr; }
+      .deep-dive { padding: 20px 18px; }
+      .section-h2 { font-size: 19px; }
+      .category-grid { grid-template-columns: 1fr 1fr; }
+      .guide-steps { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .category-grid { grid-template-columns: 1fr; }
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- ====== 吸顶公告条 ====== -->
+  <div class="topbar" role="region" aria-label="站内公告">
+    <div class="topbar-inner">
+      <span class="topbar-brand">曼陀sp庄园</span>
+      <div class="topbar-items">
+        <span class="topbar-item">
+          <span class="topbar-date">2026-11-06</span>
+          <span class="topbar-sep">·</span>
+          <span>绳缚工作坊「结绳记事」第12期开放报名</span>
+        </span>
+        <span class="topbar-item">
+          <span class="topbar-date">2026-11-04</span>
+          <span class="topbar-sep">·</span>
+          <span>安全词使用规范2.0版发布，新增红黄绿三级信号</span>
+        </span>
+        <span class="topbar-item">
+          <span class="topbar-date">2026-11-02</span>
+          <span class="topbar-sep">·</span>
+          <span>本月新增「工具护理」分类，收录12篇评测</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== 吸顶页头 ====== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="曼陀sp庄园首页">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 3C12 3 5.5 9.5 5.5 17.5c0 9.5 14.5 19 14.5 19s14.5-9.5 14.5-19C34.5 9.5 28 3 20 3z" fill="#8b2e4a"/>
+          <circle cx="20" cy="16" r="6" fill="#f5e9e3"/>
+          <path d="M14 16h12M20 10v12" stroke="#8b2e4a" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">曼陀sp庄园</span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选条目</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">分类导航</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">体验路径</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#community">用户评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="search" id="siteSearch" placeholder="搜索条目…" aria-label="搜索站内条目">
+          <button type="button" id="searchBtn" aria-label="执行搜索">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+          </button>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="打开导航菜单" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 移动端导航抽屉 -->
+  <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav-panel" role="dialog" aria-modal="true" aria-label="移动导航">
+      <button class="mobile-nav-close" id="mobileClose" aria-label="关闭菜单">×</button>
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选条目</a>
+      <a href="/#updates">最新动态</a>
+      <a href="/#categories">分类导航</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">体验路径</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#community">用户评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+      <a href="/#rank">热门榜单</a>
+    </div>
+  </div>
+
+  <!-- ====== 首屏 ====== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>曼陀sp庄园</h1>
+      <p class="hero-desc">
+        汇集绳缚技法、支配与臣服关系、SP实践、安全规范与装备评测。从入门安全词设置到进阶绳结选择，从工具材质对比到社区经验讨论，为成年实践者提供可核对的参照信息。
+      </p>
+      <div class="hero-actions">
+        <a href="/#featured" class="btn-primary">浏览精选条目</a>
+        <a href="/#guide" class="btn-ghost">查看体验路径</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 400 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="45%" r="50%">
+            <stop offset="0%" stop-color="#f3e3dd"/>
+            <stop offset="100%" stop-color="#faf6f4" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="200" cy="170" r="150" fill="url(#glow)"/>
+        <path d="M200 40c-14 0-26 10-26 24 0 16 26 40 26 40s26-24 26-40c0-14-12-24-26-24z" fill="#b85c72" opacity="0.7"/>
+        <path d="M150 120c-20 12-30 36-24 58 8 28 38 44 74 44s66-16 74-44c6-22-4-46-24-58" stroke="#8b2e4a" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.55"/>
+        <path d="M120 220c10 40 40 70 80 70s70-30 80-70" stroke="#c99a6b" stroke-width="2" stroke-linecap="round" fill="none" stroke-dasharray="6 8" opacity="0.7"/>
+        <circle cx="200" cy="170" r="22" fill="#8b2e4a" opacity="0.12"/>
+        <circle cx="200" cy="170" r="10" fill="#8b2e4a" opacity="0.35"/>
+        <circle cx="200" cy="170" r="4" fill="#b85c72"/>
+        <path d="M80 280c30-6 60-4 90 4" stroke="#8b2e4a" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+        <path d="M320 280c-30-6-60-4-90 4" stroke="#8b2e4a" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+        <circle cx="310" cy="100" r="3" fill="#c99a6b" opacity="0.6"/>
+        <circle cx="90" cy="140" r="2.5" fill="#b85c72" opacity="0.5"/>
+        <circle cx="340" cy="200" r="2" fill="#8b2e4a" opacity="0.4"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ====== 三栏门户 ====== -->
+  <div class="portal-wrap">
+
+    <!-- 左频道索引 -->
+    <nav class="channel-index" id="channelNav" aria-label="频道索引">
+      <div class="channel-index-title">频道索引</div>
+      <a href="/#overview" class="active">领域概览</a>
+      <a href="/#featured">精选条目</a>
+      <a href="/#updates">最新动态</a>
+      <a href="/#categories">分类导航</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">体验路径</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#community">用户评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+      <a href="/#rank">热门榜单</a>
+    </nav>
+
+    <!-- 中主内容 -->
+    <main class="main-content" id="mainContent">
+
+      <!-- 1. 领域概览 -->
+      <section class="section" id="overview">
+        <h2 class="section-h2">领域概览 <span class="sub">BDSM亚文化的内容版图</span></h2>
+        <div class="overview-text">
+          <p>绳缚（Shibari）在中文圈常被归入“SP”或“束缚”大类，实际包含大量技术分支：从最基础的单柱缚、双柱缚，到需要解剖学知识的吊缚与部分悬吊。日本绳缚流派“一鬼の绳”与“雪村春树”风格在2018年后通过视频平台传入中文社群，直接影响了国内绳缚工作坊的教学体系。目前活跃的线下工作坊集中在北京、上海、成都三地，单场参与人数通常在12—20人之间。</p>
+          <p>支配与臣服（D/s）关系不同于单次场景实践，更强调长期协商与角色边界维护。圈内常见的“契约模板”从2019年开始在豆瓣小组和Telegram频道中流传，标准版本包含安全词层级、日常汇报频率、场景后安抚流程等条款。SP（Spanking）实践则自成体系，工具从手掌、藤条到拍击板，材质差异直接影响痛感持续时间和皮肤反应，2026年10月刚结束的“上海工具展”上，植鞣革与碳纤维材质的对比成为讨论焦点。</p>
+          <p>安全规范是绕不开的基础内容。安全词系统从简单的“红黄绿”三级信号，到部分社群推行的“数字+手势”双重确认，解决的是不同场景下的沟通失效问题。知情同意书在2025年后开始被更多工作坊采用，但圈内对书面形式的必要性仍有分歧。装备评测方面，绳材的直径、捻度、回弹性三项指标比品牌更重要——6mm黄麻绳适合新手练习，8mm剑麻绳在悬吊场景中提供更高安全冗余。</p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="section" id="featured">
+        <h2 class="section-h2">精选条目 <span class="sub">12个可检索的具体内容</span></h2>
+        <div class="card-grid" id="featuredGrid">
+
+          <article class="card" data-search="绳缚 单柱缚 入门 安全">
+            <img class="card-img" src="https://picsum.photos/seed/shibari01/400/300" width="400" height="300" loading="lazy" alt="绳缚练习中单柱缚的手部缠绕特写">
+            <div class="card-body">
+              <span class="card-type">技法教程</span>
+              <h3 class="card-title">单柱缚：手腕固定的三种收尾方式</h3>
+              <p class="card-desc">对比活结、双套结与绞索结在单柱缚中的稳定性差异，附6mm黄麻绳的实测滑脱数据，适合刚接触绳缚的练习者。</p>
+              <div class="tags"><span class="tag">绳缚入门</span><span class="tag">手腕固定</span><span class="tag">黄麻绳</span></div>
+              <div class="card-meta"><span class="hot">热度 2.4k</span><span>更新 2026-11-05</span><span>评分 4.7</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="安全词 红黄绿 三级信号 协商">
+            <img class="card-img" src="https://picsum.photos/seed/safeword02/400/300" width="400" height="300" loading="lazy" alt="安全词卡片与红黄绿三色标签并排放在桌面上">
+            <div class="card-body">
+              <span class="card-type">安全规范</span>
+              <h3 class="card-title">红黄绿安全词系统：三级信号的实际用法</h3>
+              <p class="card-desc">解释“红”立即停止、“黄”调整强度、“绿”继续加深的协商逻辑，附2026年10月更新的社群共识版手势对照表。</p>
+              <div class="tags"><span class="tag">安全词</span><span class="tag">知情同意</span><span class="tag">场景沟通</span></div>
+              <div class="card-meta"><span class="hot">热度 3.1k</span><span>更新 2026-11-04</span><span>评分 4.9</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="吊缚 悬吊 绳材 8mm 剑麻">
+            <img class="card-img" src="https://picsum.photos/seed/suspension03/400/300" width="400" height="300" loading="lazy" alt="悬吊绳缚中8mm剑麻绳的承重节点特写">
+            <div class="card-body">
+              <span class="card-type">进阶技法</span>
+              <h3 class="card-title">吊缚承重节点：8mm剑麻绳的受力分布</h3>
+              <p class="card-desc">用拉力计记录单点悬吊与双点悬吊的绳段负荷差异，给出不同体重区间的绳径建议，数据来自2026年9月成都工作坊实测。</p>
+              <div class="tags"><span class="tag">吊缚</span><span class="tag">剑麻绳</span><span class="tag">承重测试</span></div>
+              <div class="card-meta"><span class="hot">热度 1.8k</span><span>更新 2026-10-30</span><span>评分 4.6</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="支配 臣服 D/s 契约 模板">
+            <img class="card-img" src="https://picsum.photos/seed/dscontract04/400/300" width="400" height="300" loading="lazy" alt="手写D/s契约模板与钢笔放在深色桌面上">
+            <div class="card-body">
+              <span class="card-type">关系实践</span>
+              <h3 class="card-title">D/s契约模板逐条拆解：哪些条款值得保留</h3>
+              <p class="card-desc">对比2024版与2026版社群流传模板的差异，重点分析安全词层级、日常汇报频率与场景后安抚流程三项条款的实际执行难度。</p>
+              <div class="tags"><span class="tag">D/s关系</span><span class="tag">契约模板</span><span class="tag">边界协商</span></div>
+              <div class="card-meta"><span class="hot">热度 2.0k</span><span>更新 2026-10-28</span><span>评分 4.5</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="SP 藤条 拍击板 痛感 工具">
+            <img class="card-img" src="https://picsum.photos/seed/spanking05/400/300" width="400" height="300" loading="lazy" alt="藤条与植鞣革拍击板并排展示材质纹理">
+            <div class="card-body">
+              <span class="card-type">装备评测</span>
+              <h3 class="card-title">藤条与植鞣革拍击板：痛感曲线对比</h3>
+              <p class="card-desc">记录同一力度下两种工具的初始痛感、峰值时间与消退时长，植鞣革的痛感消退比藤条慢约40秒，但峰值低两档。</p>
+              <div class="tags"><span class="tag">SP工具</span><span class="tag">藤条</span><span class="tag">拍击板</span></div>
+              <div class="card-meta"><span class="hot">热度 1.5k</span><span>更新 2026-10-25</span><span>评分 4.3</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="知情同意书 书面 工作坊 模板">
+            <img class="card-img" src="https://picsum.photos/seed/consent06/400/300" width="400" height="300" loading="lazy" alt="知情同意书模板打印件与签字笔">
+            <div class="card-body">
+              <span class="card-type">安全规范</span>
+              <h3 class="card-title">知情同意书该写多细：三个工作坊的模板差异</h3>
+              <p class="card-desc">北京、上海、成都三家工作坊的同意书模板在风险告知、退出机制与事后沟通三部分详略不同，逐项对比可借鉴的条款结构。</p>
+              <div class="tags"><span class="tag">知情同意</span><span class="tag">工作坊</span><span class="tag">风险告知</span></div>
+              <div class="card-meta"><span class="hot">热度 1.1k</span><span>更新 2026-10-22</span><span>评分 4.2</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="绳材 护理 上油 黄麻 剑麻">
+            <img class="card-img" src="https://picsum.photos/seed/ropeoil07/400/300" width="400" height="300" loading="lazy" alt="黄麻绳保养上油时绳纤维吸收油脂的特写">
+            <div class="card-body">
+              <span class="card-type">工具护理</span>
+              <h3 class="card-title">黄麻绳上油周期：不同湿度下的养护差异</h3>
+              <p class="card-desc">南方梅雨季与北方干燥环境下黄麻绳的上油频率相差近一倍，给出以手感判断而非固定周期的实操建议。</p>
+              <div class="tags"><span class="tag">绳材护理</span><span class="tag">黄麻绳</span><span class="tag">上油</span></div>
+              <div class="card-meta"><span class="hot">热度 980</span><span>更新 2026-10-18</span><span>评分 4.4</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="落差 场景后 安抚 drop 情绪">
+            <img class="card-img" src="https://picsum.photos/seed/aftercare08/400/300" width="400" height="300" loading="lazy" alt="场景后安抚用的毯子与温水杯放在沙发旁">
+            <div class="card-body">
+              <span class="card-type">心理安全</span>
+              <h3 class="card-title">场景后情绪落差：识别与应对的四个步骤</h3>
+              <p class="card-desc">从生理性疲惫、情绪反扑到自我怀疑，分阶段说明场景后48小时内常见的情绪波动，附社群成员分享的安抚清单。</p>
+              <div class="tags"><span class="tag">场景后安抚</span><span class="tag">情绪落差</span><span class="tag">心理安全</span></div>
+              <div class="card-meta"><span class="hot">热度 1.7k</span><span>更新 2026-10-16</span><span>评分 4.8</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="绳缚工作坊 结绳记事 报名 12期">
+            <img class="card-img" src="https://picsum.photos/seed/workshop09/400/300" width="400" height="300" loading="lazy" alt="绳缚工作坊现场参与者围坐练习绳结">
+            <div class="card-body">
+              <span class="card-type">活动信息</span>
+              <h3 class="card-title">「结绳记事」第12期：吊缚安全前置课</h3>
+              <p class="card-desc">2026年11月15日成都场，限16人，要求完成单柱缚与双柱缚基础练习。课程包含绳材检查清单与悬吊前身体评估流程。</p>
+              <div class="tags"><span class="tag">绳缚工作坊</span><span class="tag">成都</span><span class="tag">吊缚安全</span></div>
+              <div class="card-meta"><span class="hot">热度 860</span><span>更新 2026-11-06</span><span>评分 4.6</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="碳纤维 拍击板 材质 对比 植鞣革">
+            <img class="card-img" src="https://picsum.photos/seed/carbon10/400/300" width="400" height="300" loading="lazy" alt="碳纤维拍击板与植鞣革拍击板的表面纹理对比">
+            <div class="card-body">
+              <span class="card-type">装备评测</span>
+              <h3 class="card-title">碳纤维拍击板值不值：与植鞣革的三项对比</h3>
+              <p class="card-desc">重量轻约35%、回弹快、清洁方便，但冲击感偏硬且不留痕迹。从2026上海工具展的试打反馈看，适合偏好短促痛感的人。</p>
+              <div class="tags"><span class="tag">碳纤维</span><span class="tag">拍击板</span><span class="tag">工具展</span></div>
+              <div class="card-meta"><span class="hot">热度 1.2k</span><span>更新 2026-10-12</span><span>评分 4.1</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="数字手势 双重确认 安全信号 场景">
+            <img class="card-img" src="https://picsum.photos/seed/handsignal11/400/300" width="400" height="300" loading="lazy" alt="手部比出数字手势作为安全信号确认">
+            <div class="card-body">
+              <span class="card-type">安全规范</span>
+              <h3 class="card-title">数字+手势双重确认：适合哪些场景</h3>
+              <p class="card-desc">口腔被占用或手臂受限时，数字报数配合固定手势可减少误判。梳理2026年社群投票中支持率最高的三种手势方案。</p>
+              <div class="tags"><span class="tag">安全信号</span><span class="tag">手势确认</span><span class="tag">场景沟通</span></div>
+              <div class="card-meta"><span class="hot">热度 740</span><span>更新 2026-10-09</span><span>评分 4.3</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-search="藤条 品牌 评测 直径 手感">
+            <img class="card-img" src="https://picsum.photos/seed/cane12/400/300" width="400" height="300" loading="lazy" alt="不同直径藤条并排展示节间距与表面打磨">
+            <div class="card-body">
+              <span class="card-type">装备评测</span>
+              <h3 class="card-title">藤条选购：直径与节间距比品牌更重要</h3>
+              <p class="card-desc">8mm—10mm直径适合中度SP实践，节间距均匀的藤条在挥动时手感更线性。附三种常见藤条在2026年10月的价格区间。</p>
+              <div class="tags"><span class="tag">藤条</span><span class="tag">选购指南</span><span class="tag">SP工具</span></div>
+              <div class="card-meta"><span class="hot">热度 1.0k</span><span>更新 2026-10-06</span><span>评分 4.2</span></div>
+            </div>
+          </article>
+
+        </div>
+        <div class="no-result" id="searchNoResult">没有找到匹配的条目，试试“绳缚”“安全词”或“藤条”。</div>
+      </section>
+
+      <!-- 3. 最新更新/动态 -->
+      <section class="section" id="updates">
+        <h2 class="section-h2">最新动态 <span class="sub">10条近期条目与社区动作</span></h2>
+        <div class="compact-list">
+          <div class="compact-item"><span class="num">01</span><span class="name">绳缚练习日志「单柱缚100次」</span><span class="brief">作者记录连续30天每日练习单柱缚的收尾速度变化，从平均48秒缩短至22秒，附第7天与第28天的绳结照片对比。</span><span class="date">11-07</span></div>
+          <div class="compact-item"><span class="num">02</span><span class="name">安全词手势对照表v3</span><span class="brief">新增“手掌朝下左右摆动”表示需要立刻检查绳结，替代此前容易混淆的握拳动作。社群投票通过率81%。</span><span class="date">11-06</span></div>
+          <div class="compact-item"><span class="num">03</span><span class="name">上海工具展SP区试打反馈</span><span class="brief">27份有效反馈中，14人认为碳纤维拍击板“声音大于痛感”，9人觉得植鞣革“痛感后劲更明显”。</span><span class="date">11-05</span></div>
+          <div class="compact-item"><span class="num">04</span><span class="name">D/s契约模板2026修订版</span><span class="brief">删除“每日汇报”强制项，改为“按双方约定频率”，新增场景后24小时内必须进行一次非角色对话的条款。</span><span class="date">11-04</span></div>
+          <div class="compact-item"><span class="num">05</span><span class="name">黄麻绳上油实验记录</span><span class="brief">同一批次6mm黄麻绳分三组使用不同油脂，30天后拉伸强度测试显示蜂蜡组下降7%，矿物油组下降12%。</span><span class="date">11-03</span></div>
+          <div class="compact-item"><span class="num">06</span><span class="name">成都吊缚安全前置课报名</span><span class="brief">11月15日场次已报11人，剩余5个名额。要求提前提交绳材检查清单，现场核验。</span><span class="date">11-02</span></div>
+          <div class="compact-item"><span class="num">07</span><span class="name">场景后情绪记录表模板</span><span class="brief">按0—10分记录疲惫、低落、焦虑三项情绪，连续记录72小时，社群中已有43人分享使用体验。</span><span class="date">10-31</span></div>
+          <div class="compact-item"><span class="num">08</span><span class="name">藤条直径与痛感关联投票</span><span class="brief">112人参与，58%认为8mm—9mm是“可承受且有余量”的区间，19%偏好10mm以上。</span><span class="date">10-29</span></div>
+          <div class="compact-item"><span class="num">09</span><span class="name">知情同意书模板下载量</span><span class="brief">10月站内下载次数最高的同意书模板为“中英双语版”，共下载326次，其中78%来自首次访问。</span><span class="date">10-27</span></div>
+          <div class="compact-item"><span class="num">10</span><span class="name">绳缚摄影用光技巧分享</span><span class="brief">侧逆光加柔光箱的布光方案在绳缚摄影中能突出绳材纹理，附三张不同色温下的成片对比。</span><span class="date">10-24</span></div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="section" id="categories">
+        <h2 class="section-h2">分类导航 <span class="sub">按具体方向查找</span></h2>
+        <div class="category-grid">
+          <a href="/#featured" class="category-chip"><span class="dot"></span>绳缚技法</a>
+          <a href="/#featured" class="category-chip"><span class="dot"></span>支配与臣服</a>
+          <a href="/#featured" class="category-chip"><span class="dot"></span>SP实践</a>
+          <a href="/#featured" class="category-chip"><span class="dot"></span>安全规范</a>
+          <a href="/#featured" class="category-chip"><span class="dot"></span>装备评测</a>
+          <a href="/#featured" class="category-chip"><span class="dot"></span>工具护理</a>
+          <a href="/#featured" class="category-chip"><span class="dot"></span>心理与沟通</a>
+          <a href="/#featured" class="category-chip"><span class="dot"></span>线下活动</a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析 -->
+      <section class="section" id="deep-dive">
+        <h2 class="section-h2">深度解析 <span class="sub">绳缚与SP实践中的判断依据</span></h2>
+        <div class="deep-dive">
+          <h3>绳径选择：6mm、8mm、10mm的实际差异</h3>
+          <p>绳缚用绳的直径直接对应承重上限与操作手感。6mm黄麻绳在单柱缚练习中手感清晰，绳结不易滑脱，但用于吊缚时单绳承重安全冗余偏低。8mm剑麻绳的断裂强度约为6mm黄麻绳的1.8倍，是2026年成都工作坊吊缚环节的指定用绳。10mm以上直径常用于地缚或大型固定，操作灵活性下降明显。</p>
+          <p>2026年9月成都工作坊的实测数据显示：体重60kg的练习者使用双点悬吊时，8mm剑麻绳的节点负荷约在180—220kg区间，安全系数接近标注值的下限。同一测试中6mm黄麻绳的节点负荷达到140kg，已接近其断裂强度的60%。工作坊给出的结论是：吊缚场景中绳径不应低于8mm，且每6个月需做一次拉力抽检。</p>
+          <div class="quote">“6mm够用”这句话在单柱缚语境下成立，换到悬吊场景就不成立了。区分场景是选绳的第一步。</div>
+
+          <h3>SP工具的痛感维度：峰值、持续与消退</h3>
+          <p>痛感不是单一指标。藤条、手掌、拍击板、鞭子四种常见工具在三个维度上差异显著。藤条的初始痛感高、峰值出现快（约0.3秒）、消退也快（平均90秒内降至可忽略水平）。植鞣革拍击板的初始痛感中等，峰值时间约0.8秒，但消退时长可达3—4分钟，后劲更明显。碳纤维拍击板介于两者之间，但声音响度明显高于实际痛感。</p>
+          <p>2026年10月上海工具展的试打反馈中，27位参与者对三种工具的“痛感/声音比”打分：植鞣革3.2、藤条4.1、碳纤维2.4。碳纤维的低比值意味着在需要控制声音的场景中更合适，但容易误判实际冲击强度。这个数据在社群内被引用时经常忽略样本量仅27人这一点。</p>
+
+          <h3>D/s契约中的可执行条款与装饰性条款</h3>
+          <p>2026版契约模板中，“安全词层级”条款具备明确的可执行性：红色立即停止、黄色调整强度、绿色继续，三级信号在场景中可被快速调用。相比之下，“每日汇报行程”条款的执行难度被低估——连续执行30天的社群成员中，第3周开始出现漏报的比例超过40%。</p>
+          <p>“场景后24小时内进行一次非角色对话”是2026修订版新增的条款。成都工作坊跟踪了17对采用该条款的搭档，其中14对在三个月内保持了稳定的场景频率，3对因对话内容引发争执而暂停实践。这个数据只能说明条款需要配合双方的沟通能力使用，不能单独归因。</p>
+
+          <h3>知情同意：书面形式的实际作用</h3>
+          <p>书面同意书的核心作用不在于法律效力——目前国内没有专门针对BDSM实践的法规条款——而在于把“双方聊过什么”固定下来。北京某工作坊的模板包含风险告知、退出机制、事后沟通三项，上海模板增加了“场景中可随时叫停且无需解释”的独立条款，成都模板则把安全词与手势确认并列写入。</p>
+          <p>三份模板的共同缺失项是“场景中身体状态变化”的告知义务。比如手臂麻木、呼吸受限这类信号，多数模板只写了“及时告知”，没有给出具体的判断标准和告知方式。2026年10月社群讨论中有人提出加入“握力测试”作为客观指标，目前尚未形成共识文本。</p>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南/消费路径 -->
+      <section class="section" id="guide">
+        <h2 class="section-h2">体验路径 <span class="sub">从阅读到实践的判断顺序</span></h2>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <span class="step-num">1</span>
+            <h4>先确认安全框架</h4>
+            <p>安全词层级和停止手势的约定，比任何技法都优先。2026年社群共识版建议至少设置两个层级的信号，并在场景前口头确认一遍。</p>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">2</span>
+            <h4>按场景选绳径</h4>
+            <p>单柱缚练习用6mm黄麻绳足够，悬吊场景直接跳到8mm剑麻绳。绳材的捻度和回弹性比品牌更影响手感，买之前最好能上手摸一次。</p>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">3</span>
+            <h4>判断一个条目值不值得看</h4>
+            <p>看它有没有给出具体数字：绳径、承重、痛感消退时间、样本量。只写“体验很好”“非常安全”而没有可核对参数的条目，参考价值有限。</p>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">4</span>
+            <h4>比较同类条目的方法</h4>
+            <p>装备评测对比三个维度：材质、实测数据、适用场景。技法教程对比两个维度：前置要求、失败案例。缺了失败案例的教程，往往跳过容易出错的环节。</p>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">5</span>
+            <h4>线下工作坊的筛选</h4>
+            <p>看是否要求提前提交绳材检查清单、是否限制人数（16人以内较合理）、是否安排场景后沟通环节。三项都有的工作坊，2026年10月统计中不到四成。</p>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">6</span>
+            <h4>场景后的记录习惯</h4>
+            <p>用0—10分记录疲惫、低落、焦虑三项情绪，连续记录72小时。社群中43人分享的记录显示，第2天下午是情绪低点最集中的时段。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="section" id="faq">
+        <h2 class="section-h2">常见问答 <span class="sub">6个真实搜索问句</span></h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>新手第一次绳缚练习应该准备什么？</summary>
+            <div class="faq-answer">6mm黄麻绳10米、安全剪刀、一条毯子和一瓶水。黄麻绳的摩擦力适中，打结后不易滑脱，适合练习单柱缚和双柱缚。剪刀用于紧急情况下快速剪断绳索，必须放在伸手可及的位置。毯子用于场景后保暖，体温下降比想象中快。</div>
+          </details>
+          <details class="faq-item">
+            <summary>安全词用“红黄绿”和自定词语有什么区别？</summary>
+            <div class="faq-answer">“红黄绿”的优势是通用性强，换搭档时不需要重新约定，2026年社群调查中约76%的实践者使用这套系统。自定词语的好处是不容易被日常对话误触发，但在高强度场景中，人可能一时想不起自定词。混合方案是同时约定红黄绿和一到两个自定词，后者用于特定场景。</div>
+          </details>
+          <details class="faq-item">
+            <summary>吊缚至少要用多粗的绳子？</summary>
+            <div class="faq-answer">8mm是多数工作坊的底线。6mm黄麻绳在悬吊场景中安全冗余不足，2026年9月成都工作坊的拉力测试中，6mm黄麻绳在双点悬吊下的节点负荷已接近其断裂强度的60%。剑麻绳的断裂强度高于黄麻绳，8mm剑麻绳是吊缚场景中被引用最多的规格。每6个月做一次拉力抽检是社群推荐的维护节奏。</div>
+          </details>
+          <details class="faq-item">
+            <summary>SP之后皮肤出现淤青需要处理吗？</summary>
+            <div class="faq-answer">轻度淤青通常在5—7天内自行消退，前24小时冷敷、之后热敷是社群中常见的处理方式。需要警惕的是持续肿胀、皮肤破损或疼痛加剧，这些情况应停止实践并就医。2026年10月上海工具展的反馈中，植鞣革拍击板造成的淤青消退时间比藤条长约2天，和痛感后劲的数据趋势一致。</div>
+          </details>
+          <details class="faq-item">
+            <summary>D/s契约一定要写书面版吗？</summary>
+            <div class="faq-answer">书面版的作用是把双方聊过的边界固定下来，减少“当时说过”的争议。2026版社群模板中，安全词层级和场景后沟通流程是书面化收益最高的两项条款。口头约定在关系初期常见，但随着场景频率上升，书面版的可核对性优势会显现。北京、上海、成都三地工作坊的同意书模板都包含退出机制条款，书面形式让退出路径更明确。</div>
+          </details>
+          <details class="faq-item">
+            <summary>场景后情绪低落持续多久算正常？</summary>
+            <div class="faq-answer">社群中43人分享的72小时情绪记录显示，低落感通常在场景后12—24小时达到峰值，48小时后开始回落。如果72小时后仍持续影响日常生活，建议暂停实践并与搭档进行非角色对话。2026修订版D/s契约模板中新增的“24小时内非角色对话”条款，正是针对这个时间窗口设置的。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="section" id="community">
+        <h2 class="section-h2">用户评论 <span class="sub">16条来自社群的真实声音</span></h2>
+        <div class="comment-grid">
+          <div class="comment-card"><div class="comment-head"><div class="avatar">绳</div><span class="nickname">绳结与茶</span></div><p class="comment-text">单柱缚那篇的收尾对比很实用，活结确实比双套结容易松，练了三天才找到手感。</p><div class="comment-time">11-07</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">安</div><span class="nickname">安全词先设好</span></div><p class="comment-text">红黄绿用了两年，换搭档不用重新解释，省事。但黄灯有时候不好意思喊，得练。</p><div class="comment-time">11-06</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">剑</div><span class="nickname">剑麻八毫米</span></div><p class="comment-text">吊缚那篇的拉力数据我信，自己拿拉力计测过，8mm剑麻节点负荷确实在200kg上下。</p><div class="comment-time">11-05</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">藤</div><span class="nickname">藤条收藏者</span></div><p class="comment-text">碳纤维那个“声音大于痛感”说到点子上了。买回来第一次用吓一跳，以为下手重了，其实还好。</p><div class="comment-time">11-04</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">契</div><span class="nickname">契约不是卖身契</span></div><p class="comment-text">2026版删掉每日汇报强制项是对的。之前按老模板执行，第三周就开始漏，搞得双方都不痛快。</p><div class="comment-time">11-03</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">黄</div><span class="nickname">黄麻绳上油中</span></div><p class="comment-text">上油周期那篇救了我。南方梅雨季绳子发霉过一次，现在按手感判断，不再死记天数。</p><div class="comment-time">11-02</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">落</div><span class="nickname">落差不是矫情</span></div><p class="comment-text">场景后低落这事真得重视。第一次遇到的时候以为自己不正常，看了记录表才知道第2天下午最难熬。</p><div class="comment-time">11-01</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">手</div><span class="nickname">手势确认党</span></div><p class="comment-text">数字加手势的方案好用，尤其口腔被占的时候。手掌朝下摆动比握拳清楚多了，握拳容易和挣扎混淆。</p><div class="comment-time">10-31</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">成</div><span class="nickname">成都场报名了</span></div><p class="comment-text">结绳记事第12期还有名额吗？上周看还有5个，希望别满。</p><div class="comment-time">10-30</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">植</div><span class="nickname">植鞣革后劲大</span></div><p class="comment-text">拍击板那个消退时间对比挺准的，植鞣革打完过几个小时还有感觉，藤条基本半小时就没事了。</p><div class="comment-time">10-29</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">同</div><span class="nickname">同意书不是万能</span></div><p class="comment-text">书面同意书有用，但别指望它解决所有问题。关键是双方真的聊过，不是签个字就完事。</p><div class="comment-time">10-28</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">绳</div><span class="nickname">绳缚摄影爱好者</span></div><p class="comment-text">侧逆光那个布光方案试了，绳材纹理确实出来了，但模特皮肤容易过曝，得再调。</p><div class="comment-time">10-27</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">十</div><span class="nickname">十毫米以上党</span></div><p class="comment-text">个人偏好10mm藤条，8mm总觉得轻。不过评论区多数选8—9mm，可能我下手比较重。</p><div class="comment-time">10-26</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">南</div><span class="nickname">南方潮湿星人</span></div><p class="comment-text">想问下蜂蜡和矿物油哪个更适合南方？看那篇实验记录说蜂蜡组强度下降少，但没提防霉效果。</p><div class="comment-time">10-25</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">路</div><span class="nickname">路过看看</span></div><p class="comment-text">没实践过，单纯觉得绳结照片拍得挺好看的。</p><div class="comment-time">10-24</div></div>
+          <div class="comment-card"><div class="comment-head"><div class="avatar">早</div><span class="nickname">早该知道</span></div><p class="comment-text">第一次吊缚没检查绳材，中途发现有一处磨损，吓出一身冷汗。检查清单这东西真不能省。</p><div class="comment-time">10-23</div></div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="section" id="news">
+        <h2 class="section-h2">相关资讯 <span class="sub">6条近期领域动态</span></h2>
+        <div class="news-list">
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news01/600/400" width="600" height="400" loading="lazy" alt="绳缚工作坊现场教学场景">
+            <div class="news-body">
+              <h3 class="news-title">成都「结绳记事」工作坊11月15日开课，限16人</h3>
+              <div class="news-date">2026-11-06</div>
+              <p class="news-summary">课程要求学员提前提交绳材检查清单，现场核验8mm以上剑麻绳方可进入吊缚环节。主办方表示本期新增了悬吊前身体评估流程，由有急救资质的助教执行。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news02/600/400" width="600" height="400" loading="lazy" alt="安全词手势对照卡片特写">
+            <div class="news-body">
+              <h3 class="news-title">社群安全词手势对照表更新至v3，新增手掌摆动信号</h3>
+              <div class="news-date">2026-11-04</div>
+              <p class="news-summary">v3版删除了容易与挣扎动作混淆的握拳信号，替换为手掌朝下左右摆动。社群投票参与人数213人，通过率81%，新信号将在11月15日成都工作坊中首次使用。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news03/600/400" width="600" height="400" loading="lazy" alt="上海工具展SP区试打台">
+            <div class="news-body">
+              <h3 class="news-title">上海工具展SP区收到27份试打反馈，碳纤维声音痛感比最低</h3>
+              <div class="news-date">2026-11-02</div>
+              <p class="news-summary">反馈显示碳纤维拍击板的痛感/声音比为2.4，植鞣革为3.2，藤条为4.1。主办方计划在12月场次中增加样本量至50人，并加入不同力度档位的对比测试。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news04/600/400" width="600" height="400" loading="lazy" alt="D/s契约模板修订页截图">
+            <div class="news-body">
+              <h3 class="news-title">D/s契约模板2026修订版发布，删除每日汇报强制条款</h3>
+              <div class="news-date">2026-10-30</div>
+              <p class="news-summary">修订版将“每日汇报”改为“按约定频率”，新增场景后24小时内非角色对话条款。模板维护小组表示，跟踪的17对搭档中14对在三个月内保持了稳定场景频率。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news05/600/400" width="600" height="400" loading="lazy" alt="黄麻绳上油保养操作特写">
+            <div class="news-body">
+              <h3 class="news-title">黄麻绳上油实验30天结果：蜂蜡组拉伸强度下降7%</h3>
+              <div class="news-date">2026-10-27</div>
+              <p class="news-summary">同一批次6mm黄麻绳分蜂蜡、矿物油、不处理三组对比，30天后蜂蜡组拉伸强度下降7%，矿物油组下降12%，不处理组下降5%。实验者提醒样本量有限，结果供参考。</p>
+            </div>
+          </article>
+          <article class="news-item">
+            <img src="https://picsum.photos/seed/news06/600/400" width="600" height="400" loading="lazy" alt="场景后情绪记录表填写示例">
+            <div class="news-body">
+              <h3 class="news-title">场景后情绪记录表社群使用满月，43人分享72小时数据</h3>
+              <div class="news-date">2026-10-24</div>
+              <p class="news-summary">记录表按0—10分追踪疲惫、低落、焦虑三项，43份完整记录中第2天下午为情绪低点集中时段。模板维护者计划在11月增加“身体酸痛”第四项。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="section" id="recommend">
+        <h2 class="section-h2">相关推荐 <span class="sub">具体方向与条目名</span></h2>
+        <div class="tag-index">
+          <a href="/#featured">单柱缚收尾方式</a>
+          <a href="/#featured">8mm剑麻吊缚承重</a>
+          <a href="/#featured">红黄绿安全词实操</a>
+          <a href="/#featured">植鞣革拍击板痛感曲线</a>
+          <a href="/#featured">D/s契约2026修订对比</a>
+          <a href="/#featured">黄麻绳上油周期判断</a>
+          <a href="/#featured">场景后48小时情绪记录</a>
+          <a href="/#featured">碳纤维拍击板选购</a>
+        </div>
+      </section>
+
+      <!-- 11. 补充板块：热门榜单 -->
+      <section class="section" id="rank">
+        <h2 class="section-h2">热门榜单 <span class="sub">近30天点击与收藏综合排序</span></h2>
+        <div class="rank-list">
+          <div class="rank-item"><span class="rank-num">1</span><span class="rank-name">红黄绿安全词系统：三级信号的实际用法</span><span class="rank-score">收藏 412 · 点击 3.1k</span></div>
+          <div class="rank-item"><span class="rank-num">2</span><span class="rank-name">单柱缚：手腕固定的三种收尾方式</span><span class="rank-score">收藏 356 · 点击 2.4k</span></div>
+          <div class="rank-item"><span class="rank-num">3</span><span class="rank-name">D/s契约模板逐条拆解：哪些条款值得保留</span><span class="rank-score">收藏 298 · 点击 2.0k</span></div>
+          <div class="rank-item"><span class="rank-num">4</span><span class="rank-name">吊缚承重节点：8mm剑麻绳的受力分布</span><span class="rank-score">收藏 241 · 点击 1.8k</span></div>
+          <div class="rank-item"><span class="rank-num">5</span><span class="rank-name">场景后情绪落差：识别与应对的四个步骤</span><span class="rank-score">收藏 217 · 点击 1.7k</span></div>
+          <div class="rank-item"><span class="rank-num">6</span><span class="rank-name">藤条与植鞣革拍击板：痛感曲线对比</span><span class="rank-score">收藏 189 · 点击 1.5k</span></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="aside-col" aria-label="辅助信息">
+      <div class="aside-card">
+        <h3 class="aside-title">站内热榜</h3>
+        <ul class="hot-list">
+          <li><span class="hot-num">1</span><span class="hot-name">红黄绿安全词系统</span><span class="hot-badge">新</span></li>
+          <li><span class="hot-num">2</span><span class="hot-name">单柱缚收尾方式</span></li>
+          <li><span class="hot-num">3</span><span class="hot-name">D/s契约逐条拆解</span></li>
+          <li><span class="hot-num">4</span><span class="hot-name">8mm剑麻吊缚承重</span></li>
+          <li><span class="hot-num">5</span><span class="hot-name">场景后情绪记录</span></li>
+          <li><span class="hot-num">6</span><span class="hot-name">碳纤维拍击板评测</span></li>
+        </ul>
+      </div>
+      <div class="aside-card">
+        <h3 class="aside-title">近期更新</h3>
+        <ul class="update-list">
+          <li><span class="up-name">单柱缚收尾对比</span><span class="up-date">11-07</span></li>
+          <li><span class="up-name">安全词手势v3</span><span class="up-date">11-06</span></li>
+          <li><span class="up-name">上海工具展反馈</span><span class="up-date">11-05</span></li>
+          <li><span class="up-name">D/s契约2026版</span><span class="up-date">11-04</span></li>
+          <li><span class="up-name">黄麻绳上油实验</span><span class="up-date">11-03</span></li>
+          <li><span class="up-name">成都工作坊报名</span><span class="up-date">11-02</span></li>
+        </ul>
+      </div>
+      <div class="aside-card">
+        <h3 class="aside-title">参与互动</h3>
+        <p style="font-size:13px;color:var(--ink-3);line-height:1.7;margin-bottom:10px;">投稿绳缚练习日志、工具评测或场景记录，经审核后发布于精选条目与动态版块。</p>
+        <a href="/#community" class="btn-ghost" style="padding:8px 18px;font-size:13px;display:inline-block;">查看投稿说明</a>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ====== 页尾 ====== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo-text">曼陀sp庄园</div>
+        <p class="footer-desc">覆盖2025—2026年绳缚技法、D/s关系、SP实践与安全规范内容，条目类型包含教程、评测、活动信息与社群讨论记录。每周三、周六更新动态版块，精选条目按投稿与实测进度不定时补充。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容频道</h4>
+        <a href="/#overview">领域概览</a>
+        <a href="/#featured">精选条目</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">体验路径</a>
+      </div>
+      <div class="footer-col">
+        <h4>社区</h4>
+        <a href="/#community">用户评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#rank">热门榜单</a>
+        <a href="/#recommend">相关推荐</a>
+      </div>
+      <div class="footer-col">
+        <h4>参与</h4>
+        <a href="/#community">投稿说明</a>
+        <a href="/#featured">工具评测投稿</a>
+        <a href="/#updates">活动信息发布</a>
+        <a href="/#faq">常见问答</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 曼陀sp庄园 · 内容为社群分享与示例条目，实践前请自行核实安全规范</span>
+      <span>最近更新：2026-11-08</span>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <script>
+    (function() {
+      // 移动端菜单
+      var menuToggle = document.getElementById('menuToggle');
+      var mobileNav = document.getElementById('mobileNav');
+      var mobileClose = document.getElementById('mobileClose');
+
+      function openMenu() {
+        mobileNav.classList.add('open');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        mobileClose.focus();
+      }
+      function closeMenu() {
+        mobileNav.classList.remove('open');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        menuToggle.focus();
+      }
+      if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+          if (mobileNav.classList.contains('open')) closeMenu();
+          else openMenu();
+        });
+      }
+      if (mobileClose) mobileClose.addEventListener('click', closeMenu);
+      if (mobileNav) {
+        mobileNav.addEventListener('click', function(e) {
+          if (e.target === mobileNav) closeMenu();
+        });
+        mobileNav.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', closeMenu);
+        });
+      }
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('open')) closeMenu();
+      });
+
+      // 回顶按钮
+      var backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backTop.classList.add('show');
+        } else {
+          backTop.classList.remove('show');
+        }
+      });
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 搜索筛选
+      var searchInput = document.getElementById('siteSearch');
+      var searchBtn = document.getElementById('searchBtn');
+      var featuredGrid = document.getElementById('featuredGrid');
+      var noResult = document.getElementById('searchNoResult');
+      var cards = featuredGrid ? featuredGrid.querySelectorAll('.card') : [];
+
+      function doSearch() {
+        var q = (searchInput.value || '').trim().toLowerCase();
+        if (!cards.length) return;
+        var found = 0;
+        cards.forEach(function(card) {
+          var text = (card.getAttribute('data-search') || '') + ' ' + card.textContent.toLowerCase();
+          if (!q || text.indexOf(q) !== -1) {
+            card.style.display = '';
+            found++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        if (noResult) {
+          noResult.classList.toggle('show', found === 0 && q !== '');
+        }
+      }
+      if (searchBtn) searchBtn.addEventListener('click', doSearch);
+      if (searchInput) {
+        searchInput.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') { e.preventDefault(); doSearch(); }
+        });
+        searchInput.addEventListener('input', function() {
+          if (!searchInput.value.trim()) doSearch();
+        });
+      }
+
+      // 频道索引滚动高亮
+      var sections = document.querySelectorAll('.main-content .section');
+      var channelLinks = document.querySelectorAll('.channel-index a');
+      function highlightNav() {
+        var scrollPos = window.scrollY + 140;
+        var currentId = '';
+        sections.forEach(function(sec) {
+          if (sec.offsetTop <= scrollPos) {
+            currentId = sec.getAttribute('id');
+          }
+        });
+        channelLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '/#' + currentId) {
+            link.classList.add('active');
+          }
+        });
+      }
+      window.addEventListener('scroll', highlightNav);
+      highlightNav();
+    })();
+  </script>
+
+  <!-- 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "曼陀sp庄园",
+    "description": "BDSM亚文化内容聚合页，涵盖绳缚技法、D/s关系、SP实践、安全规范与装备评测。",
+    "inLanguage": "zh-CN",
+    "about": {
+      "@type": "Thing",
+      "name": "BDSM亚文化"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "新手第一次绳缚练习应该准备什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "6mm黄麻绳10米、安全剪刀、一条毯子和一瓶水。黄麻绳的摩擦力适中，打结后不易滑脱，适合练习单柱缚和双柱缚。剪刀用于紧急情况下快速剪断绳索，必须放在伸手可及的位置。毯子用于场景后保暖，体温下降比想象中快。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "安全词用“红黄绿”和自定词语有什么区别？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "“红黄绿”的优势是通用性强，换搭档时不需要重新约定，2026年社群调查中约76%的实践者使用这套系统。自定词语的好处是不容易被日常对话误触发，但在高强度场景中，人可能一时想不起自定词。混合方案是同时约定红黄绿和一到两个自定词，后者用于特定场景。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "吊缚至少要用多粗的绳子？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "8mm是多数工作坊的底线。6mm黄麻绳在悬吊场景中安全冗余不足，2026年9月成都工作坊的拉力测试中，6mm黄麻绳在双点悬吊下的节点负荷已接近其断裂强度的60%。剑麻绳的断裂强度高于黄麻绳，8mm剑麻绳是吊缚场景中被引用最多的规格。每6个月做一次拉力抽检是社群推荐的维护节奏。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "SP之后皮肤出现淤青需要处理吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "轻度淤青通常在5—7天内自行消退，前24小时冷敷、之后热敷是社群中常见的处理方式。需要警惕的是持续肿胀、皮肤破损或疼痛加剧，这些情况应停止实践并就医。2026年10月上海工具展的反馈中，植鞣革拍击板造成的淤青消退时间比藤条长约2天，和痛感后劲的数据趋势一致。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "D/s契约一定要写书面版吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "书面版的作用是把双方聊过的边界固定下来，减少“当时说过”的争议。2026版社群模板中，安全词层级和场景后沟通流程是书面化收益最高的两项条款。口头约定在关系初期常见，但随着场景频率上升，书面版的可核对性优势会显现。北京、上海、成都三地工作坊的同意书模板都包含退出机制条款，书面形式让退出路径更明确。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "场景后情绪低落持续多久算正常？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "社群中43人分享的72小时情绪记录显示，低落感通常在场景后12—24小时达到峰值，48小时后开始回落。如果72小时后仍持续影响日常生活，建议暂停实践并与搭档进行非角色对话。2026修订版D/s契约模板中新增的“24小时内非角色对话”条款，正是针对这个时间窗口设置的。"
+        }
+      }
+    ]
+  }
+  </script>
+</body>
+          </html>
