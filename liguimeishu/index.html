@@ -1,0 +1,1070 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>丽柜美束 - 束身衣选购与穿搭知识库</title>
+<meta name="description" content="丽柜美束聚焦束身衣与身形管理，提供束腰、腰封、连体衣等选购要点、尺码对照、穿搭方案与用户实测反馈，适合初次接触束身衣和关注身形线条的读者查阅。">
+<meta name="keywords" content="丽柜美束">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232b1a2e'/%3E%3Cpath d='M20 18h24l-4 28H24z' fill='%23d4a5c9'/%3E%3Cpath d='M26 18v-4h12v4' fill='none' stroke='%23f2e3ef' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%232b1a2e'/%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#6b2d5c;
+  --brand-light:#f3e6f0;
+  --brand-mid:#a86b9a;
+  --brand-dark:#3f1736;
+  --bg:#faf7f9;
+  --panel:#ffffff;
+  --text:#2c2229;
+  --text-2:#6e5f69;
+  --text-3:#9b8c96;
+  --line:#e8dde4;
+  --radius-card:14px;
+  --radius-btn:8px;
+  --radius-tag:999px;
+  --radius-banner:20px;
+  --shadow:0 2px 10px rgba(70,30,60,.07);
+  --shadow-hover:0 8px 24px rgba(70,30,60,.14);
+  --sticky-h:88px;
+  --container:1360px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-h)}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+:focus-visible{outline:2px solid var(--brand-mid);outline-offset:2px;border-radius:4px}
+
+/* ===== 吸顶公告条 + 页头 ===== */
+.sticky-wrap{position:sticky;top:0;z-index:100}
+.announce{
+  background:var(--brand-dark);color:#f2e3ef;
+  font-size:13px;padding:7px 16px;
+  display:flex;gap:22px;align-items:center;overflow:hidden;
+}
+.announce .brand-mini{font-weight:700;letter-spacing:.5px;color:#fff;flex-shrink:0;font-size:13px}
+.announce-track{display:flex;gap:26px;white-space:nowrap;overflow-x:auto;scrollbar-width:none}
+.announce-track::-webkit-scrollbar{display:none}
+.announce-track span{flex-shrink:0}
+.announce-track b{color:#e9c3e0;font-weight:600}
+.header{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{max-width:var(--container);margin:0 auto;padding:0 20px;display:flex;align-items:center;gap:28px;height:60px}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo svg{width:34px;height:34px}
+.logo-text{font-size:20px;font-weight:800;letter-spacing:1px;color:var(--brand-dark)}
+.main-nav{display:flex;gap:4px;flex:1;overflow-x:auto;scrollbar-width:none}
+.main-nav::-webkit-scrollbar{display:none}
+.main-nav a{
+  font-size:14px;color:var(--text-2);padding:6px 11px;border-radius:var(--radius-btn);
+  white-space:nowrap;transition:.18s;
+}
+.main-nav a:hover,.main-nav a.active{background:var(--brand-light);color:var(--brand)}
+.header-tools{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.search-box{position:relative}
+.search-box input{
+  width:170px;padding:7px 12px;border:1px solid var(--line);border-radius:var(--radius-tag);
+  font-size:13px;background:var(--bg);color:var(--text);transition:.2s;
+}
+.search-box input:focus{outline:none;border-color:var(--brand-mid);width:210px;background:#fff}
+.search-result{
+  position:absolute;top:calc(100% + 6px);right:0;width:300px;background:#fff;
+  border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow-hover);
+  max-height:320px;overflow-y:auto;display:none;z-index:120;
+}
+.search-result.show{display:block}
+.search-result a,.search-result .empty{display:block;padding:9px 14px;font-size:13px;border-bottom:1px solid var(--line)}
+.search-result a:hover{background:var(--brand-light)}
+.search-result .empty{color:var(--text-3)}
+.hamburger{display:none;width:38px;height:38px;border-radius:8px;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.hamburger span{display:block;width:20px;height:2px;background:var(--brand-dark);border-radius:2px;transition:.2s}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ===== 首屏 ===== */
+.hero{
+  max-width:var(--container);margin:0 auto;padding:40px 20px 10px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
+}
+.hero-copy .eyebrow{
+  display:inline-block;font-size:12px;letter-spacing:2px;color:var(--brand);
+  background:var(--brand-light);padding:4px 14px;border-radius:var(--radius-tag);margin-bottom:16px;
+}
+.hero h1{
+  font-size:clamp(34px,4.6vw,54px);line-height:1.15;font-weight:900;
+  letter-spacing:2px;color:var(--brand-dark);margin-bottom:18px;
+}
+.hero-desc{font-size:15.5px;color:var(--text-2);max-width:520px;margin-bottom:24px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  padding:10px 22px;border-radius:var(--radius-btn);font-size:14px;font-weight:600;
+  transition:.2s;display:inline-flex;align-items:center;gap:6px;
+}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand-dark);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.btn-ghost{border:1px solid var(--brand-mid);color:var(--brand)}
+.btn-ghost:hover{background:var(--brand-light);transform:translateY(-2px)}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.hero-visual svg{width:100%;max-width:440px;height:auto;filter:drop-shadow(0 16px 32px rgba(70,30,60,.18))}
+.hero-visual .float-tag{
+  position:absolute;background:#fff;border:1px solid var(--line);border-radius:10px;
+  padding:6px 12px;font-size:12px;color:var(--brand-dark);box-shadow:var(--shadow);
+  animation:floatY 5s ease-in-out infinite;
+}
+.hero-visual .ft1{top:8%;right:2%}
+.hero-visual .ft2{bottom:12%;left:0;animation-delay:1.6s}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media(prefers-reduced-motion:reduce){.hero-visual .float-tag{animation:none}}
+
+/* ===== 主布局：三栏 ===== */
+.layout{
+  max-width:var(--container);margin:0 auto;padding:20px 20px 60px;
+  display:grid;grid-template-columns:176px minmax(0,1fr) 250px;gap:28px;align-items:start;
+}
+/* 左频道索引 */
+.channel-col{position:sticky;top:calc(var(--sticky-h) + 16px)}
+.channel-col h2{font-size:13px;color:var(--text-3);letter-spacing:1px;font-weight:600;margin-bottom:10px;padding-left:8px}
+.channel-list li a{
+  display:block;padding:8px 12px;font-size:14px;color:var(--text-2);border-radius:8px;
+  border-left:3px solid transparent;transition:.16s;margin-bottom:2px;
+}
+.channel-list li a:hover{background:var(--brand-light);color:var(--brand)}
+.channel-list li a.active{background:var(--brand-light);color:var(--brand);font-weight:700;border-left-color:var(--brand)}
+/* 中栏 */
+.main-col{min-width:0}
+/* 右辅助栏 */
+.aside-col{position:sticky;top:calc(var(--sticky-h) + 16px);display:flex;flex-direction:column;gap:20px}
+.aside-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:16px;box-shadow:var(--shadow)}
+.aside-card h3{font-size:14px;font-weight:700;color:var(--brand-dark);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.aside-card h3::before{content:"";width:4px;height:14px;background:var(--brand);border-radius:2px}
+.rank-list li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.rank-list li:last-child{border-bottom:none}
+.rank-num{flex-shrink:0;width:20px;height:20px;border-radius:6px;background:var(--brand-light);color:var(--brand);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.rank-list li:nth-child(-n+3) .rank-num{background:var(--brand);color:#fff}
+.rank-list .r-title{color:var(--text);line-height:1.45}
+.rank-list .r-meta{color:var(--text-3);font-size:12px;margin-top:2px}
+.update-list li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px;line-height:1.5}
+.update-list li:last-child{border-bottom:none}
+.update-list time{display:block;font-size:12px;color:var(--text-3);margin-top:2px}
+
+/* ===== 板块通用 ===== */
+.section{margin-bottom:44px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.section-head h2{font-size:21px;font-weight:800;color:var(--brand-dark);letter-spacing:.5px}
+.section-head .sub{font-size:13px;color:var(--text-3)}
+.lead{font-size:14.5px;color:var(--text-2);margin-bottom:16px}
+
+/* 概览 */
+.overview{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:24px 26px;box-shadow:var(--shadow)}
+.overview p{font-size:14.5px;color:var(--text-2);margin-bottom:12px}
+.overview p:last-child{margin-bottom:0}
+.overview strong{color:var(--brand-dark)}
+.overview .kw{background:var(--brand-light);color:var(--brand);padding:1px 6px;border-radius:4px;font-weight:600}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  overflow:hidden;box-shadow:var(--shadow);transition:.22s;display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--brand-mid)}
+.card-thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--brand-light)}
+.card-thumb img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.card:hover .card-thumb img{transform:scale(1.04)}
+.card-badge{position:absolute;top:10px;left:10px;background:rgba(63,23,54,.82);color:#fff;font-size:11px;padding:2px 9px;border-radius:var(--radius-tag);backdrop-filter:blur(4px)}
+.card-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-title{font-size:15.5px;font-weight:700;color:var(--brand-dark);line-height:1.4}
+.card-point{font-size:13px;color:var(--text-2);line-height:1.6;flex:1}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11.5px;padding:2px 9px;border-radius:var(--radius-tag);background:var(--brand-light);color:var(--brand);white-space:nowrap}
+.card-meta{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--text-3);border-top:1px dashed var(--line);padding-top:9px;margin-top:2px}
+.hot{color:#c2456b;font-weight:700}
+
+/* 最新动态列表 */
+.news-list{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow)}
+.news-item{display:flex;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);transition:.16s;align-items:flex-start}
+.news-item:last-child{border-bottom:none}
+.news-item:hover{background:var(--brand-light)}
+.news-date{flex-shrink:0;font-size:12px;color:var(--text-3);width:52px;padding-top:2px}
+.news-content{flex:1;min-width:0}
+.news-content b{font-size:14.5px;color:var(--brand-dark);font-weight:700;display:block;margin-bottom:2px}
+.news-content span{font-size:13px;color:var(--text-2)}
+.news-tag{flex-shrink:0;font-size:11px;padding:2px 9px;border-radius:var(--radius-tag);background:var(--brand-light);color:var(--brand);margin-top:2px}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 14px;
+  transition:.2s;text-align:center;box-shadow:var(--shadow);
+}
+.cat-item:hover{border-color:var(--brand-mid);transform:translateY(-2px);box-shadow:var(--shadow-hover);background:var(--brand-light)}
+.cat-item .cat-icon{width:38px;height:38px;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;background:var(--brand-light);border-radius:10px}
+.cat-item .cat-icon svg{width:20px;height:20px;stroke:var(--brand);fill:none;stroke-width:1.7}
+.cat-item b{display:block;font-size:14px;color:var(--brand-dark);margin-bottom:2px}
+.cat-item span{font-size:12px;color:var(--text-3)}
+
+/* 深度解析 */
+.deep{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);padding:26px 28px;box-shadow:var(--shadow)}
+.deep h3{font-size:16.5px;font-weight:800;color:var(--brand-dark);margin:22px 0 8px;padding-left:12px;border-left:4px solid var(--brand)}
+.deep h3:first-child{margin-top:0}
+.deep p{font-size:14.5px;color:var(--text-2);margin-bottom:10px}
+.deep ul{margin:6px 0 12px 4px}
+.deep li{font-size:14px;color:var(--text-2);padding:3px 0 3px 18px;position:relative}
+.deep li::before{content:"";position:absolute;left:2px;top:12px;width:6px;height:6px;border-radius:50%;background:var(--brand-mid)}
+.deep .cmp-table{width:100%;border-collapse:collapse;margin:10px 0 14px;font-size:13.5px}
+.deep .cmp-table th,.deep .cmp-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;color:var(--text-2)}
+.deep .cmp-table th{background:var(--brand-light);color:var(--brand-dark);font-weight:700}
+
+/* 步骤/指南 */
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;gap:14px;box-shadow:var(--shadow)}
+.step-num{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.step-body b{display:block;font-size:14.5px;color:var(--brand-dark);margin-bottom:4px}
+.step-body p{font-size:13px;color:var(--text-2);line-height:1.6}
+
+/* FAQ */
+.faq-list{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow)}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list details:last-child{border-bottom:none}
+.faq-list summary{
+  padding:14px 20px;font-size:14.5px;font-weight:600;color:var(--brand-dark);
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:.16s;
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";font-size:20px;color:var(--brand-mid);font-weight:300;transition:.2s;flex-shrink:0}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+.faq-list summary:hover{background:var(--brand-light)}
+.faq-answer{padding:0 20px 16px;font-size:14px;color:var(--text-2);line-height:1.75}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.comment{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 15px;box-shadow:var(--shadow)}
+.comment-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.avatar{width:26px;height:26px;border-radius:50%;background:var(--brand-mid);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-name{font-size:13px;font-weight:700;color:var(--brand-dark)}
+.c-time{font-size:11px;color:var(--text-3);margin-left:auto}
+.comment p{font-size:13px;color:var(--text-2);line-height:1.65}
+
+/* 资讯 */
+.info-list{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--shadow)}
+.info-item{padding:15px 20px;border-bottom:1px solid var(--line);transition:.16s}
+.info-item:last-child{border-bottom:none}
+.info-item:hover{background:var(--brand-light)}
+.info-item .info-title{font-size:15px;font-weight:700;color:var(--brand-dark);margin-bottom:3px;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.info-item time{font-size:12px;color:var(--text-3);font-weight:400}
+.info-item .info-sum{font-size:13px;color:var(--text-2)}
+
+/* 相关推荐标签 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px}
+.rec-tags a{
+  font-size:13px;padding:7px 16px;border-radius:var(--radius-tag);background:var(--panel);
+  border:1px solid var(--line);color:var(--text-2);transition:.18s;
+}
+.rec-tags a:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+
+/* 投稿/互动 */
+.submit-panel{
+  background:linear-gradient(135deg,var(--brand-dark),var(--brand));
+  border-radius:var(--radius-banner);padding:28px 32px;color:#f2e3ef;
+  display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;
+}
+.submit-panel h2{font-size:20px;color:#fff;margin-bottom:6px}
+.submit-panel p{font-size:13.5px;color:#e6cfe0;max-width:560px}
+.submit-panel .btn-light{background:#fff;color:var(--brand);padding:10px 24px;border-radius:var(--radius-btn);font-weight:700;font-size:14px;transition:.2s;white-space:nowrap}
+.submit-panel .btn-light:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+
+/* 页尾 */
+.footer{background:var(--brand-dark);color:#d9c6d4;margin-top:20px}
+.footer-inner{max-width:var(--container);margin:0 auto;padding:44px 20px 24px}
+.footer-top{display:grid;grid-template-columns:1.3fr 2.2fr;gap:44px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)}
+.footer-brand .f-logo{font-size:22px;font-weight:800;color:#fff;letter-spacing:1px;margin-bottom:10px}
+.footer-brand p{font-size:13px;color:#b99cb2;line-height:1.7;max-width:340px}
+.footer-links{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.footer-links h4{font-size:13.5px;color:#fff;margin-bottom:10px;font-weight:700}
+.footer-links li{margin-bottom:6px}
+.footer-links a{font-size:12.5px;color:#b99cb2;transition:.16s}
+.footer-links a:hover{color:#fff}
+.footer-bottom{padding-top:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:#8f7490}
+.footer-bottom .update-note{color:#b99cb2}
+
+/* 回到顶部 */
+.to-top{
+  position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:50%;
+  background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px rgba(70,30,60,.3);opacity:0;visibility:hidden;transform:translateY(12px);
+  transition:.25s;z-index:90;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--brand-dark)}
+.to-top svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2.4}
+
+/* 遮罩 */
+.overlay{position:fixed;inset:0;background:rgba(30,15,26,.45);z-index:95;opacity:0;visibility:hidden;transition:.22s}
+.overlay.show{opacity:1;visibility:visible}
+
+/* ===== 响应式 ===== */
+@media(max-width:1100px){
+  .layout{grid-template-columns:160px minmax(0,1fr);}
+  .aside-col{display:none}
+  .comment-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:28px}
+  .hero-copy .hero-desc{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .hero-visual{order:-1;max-width:340px;margin:0 auto}
+  .cat-grid{grid-template-columns:repeat(4,1fr)}
+  .steps{grid-template-columns:1fr}
+}
+@media(max-width:860px){
+  .main-nav{
+    position:fixed;top:calc(var(--sticky-h));left:0;right:0;background:#fff;
+    flex-direction:column;padding:14px 20px;gap:2px;border-bottom:1px solid var(--line);
+    box-shadow:0 12px 24px rgba(70,30,60,.12);transform:translateY(-120%);
+    transition:.26s;z-index:99;max-height:calc(100vh - var(--sticky-h));overflow-y:auto;
+  }
+  .main-nav.open{transform:translateY(0)}
+  .main-nav a{padding:11px 14px;font-size:15px}
+  .hamburger{display:flex}
+  .header-inner{gap:14px}
+  .search-box input{width:120px}
+  .search-box input:focus{width:150px}
+  .layout{grid-template-columns:1fr;padding-top:12px}
+  .channel-col{position:static;display:none}
+  .comment-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr;gap:26px}
+  .footer-links{grid-template-columns:repeat(2,1fr)}
+  .submit-panel{grid-template-columns:1fr;text-align:left}
+}
+@media(max-width:740px){
+  :root{--sticky-h:84px}
+  .announce{font-size:12px;gap:14px;padding:6px 12px}
+  .header-inner{height:56px;padding:0 14px}
+  .logo-text{font-size:18px}
+  .search-box input{width:100px}
+  .search-box input:focus{width:130px}
+  .search-result{width:260px;right:-40px}
+  .hero{padding:22px 16px 4px;gap:18px}
+  .hero h1{font-size:34px}
+  .hero-desc{font-size:14px}
+  .layout{padding:14px 16px 44px;gap:22px}
+  .section{margin-bottom:34px}
+  .section-head h2{font-size:18.5px}
+  .card-grid{grid-template-columns:1fr}
+  .news-item{flex-wrap:wrap;gap:6px 12px;padding:12px 14px}
+  .news-date{width:auto}
+  .news-tag{display:none}
+  .cat-grid{grid-template-columns:repeat(2,1fr);gap:9px}
+  .deep{padding:20px 18px}
+  .overview{padding:18px 18px}
+  .submit-panel{padding:22px 20px}
+  .footer-inner{padding:32px 16px 20px}
+  .footer-links{grid-template-columns:1fr 1fr;gap:18px}
+  .to-top{right:14px;bottom:16px;width:40px;height:40px}
+}
+@media(max-width:400px){
+  .hero h1{font-size:29px}
+  .logo-text{font-size:16px}
+  .search-box{display:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告 + 页头 -->
+<div class="sticky-wrap">
+  <div class="announce" aria-label="站内更新公告">
+    <span class="brand-mini">丽柜美束</span>
+    <div class="announce-track">
+      <span><b>11-07</b> 新增《高腰束身衣尺码对照表》2026 修订版</span>
+      <span><b>11-06</b> 秋冬连体衣 12 款实测更新</span>
+      <span><b>11-05</b> 用户投稿：产后恢复束腰 90 天记录</span>
+    </div>
+  </div>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/#hero" class="logo" aria-label="丽柜美束首页">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#2b1a2e"/>
+          <path d="M20 18h24l-4 28H24z" fill="#d4a5c9"/>
+          <path d="M26 18v-4h12v4" fill="none" stroke="#f2e3ef" stroke-width="3"/>
+          <circle cx="32" cy="32" r="5" fill="#2b1a2e"/>
+        </svg>
+        <span class="logo-text">丽柜美束</span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="主导航">
+        <a href="/#overview">束身衣入门</a>
+        <a href="/#featured">精选实测</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">品类导航</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">选购路径</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">行业资讯</a>
+        <a href="/#submit">投稿互动</a>
+      </nav>
+      <div class="header-tools">
+        <div class="search-box">
+          <input type="search" id="searchInput" placeholder="搜索条目/品类…" aria-label="站内搜索">
+          <div class="search-result" id="searchResult" role="listbox"></div>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<!-- 首屏 -->
+<section class="hero" id="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">束身衣 · 身形管理内容库</span>
+    <h1>丽柜美束</h1>
+    <p class="hero-desc">汇集束腰、腰封、连体塑身衣、产后恢复带等品类的尺码对照、材质对比、穿搭方案与 90 天以上长期穿着记录，供初次选购和进阶换款时查阅。</p>
+    <div class="hero-actions">
+      <a href="/#featured" class="btn btn-primary">查看精选实测</a>
+      <a href="/#guide" class="btn btn-ghost">选购路径</a>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <svg viewBox="0 0 440 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#f3e6f0"/>
+          <stop offset="1" stop-color="#e2c4d8"/>
+        </linearGradient>
+        <linearGradient id="hg2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#6b2d5c"/>
+          <stop offset="1" stop-color="#3f1736"/>
+        </linearGradient>
+      </defs>
+      <rect x="30" y="20" width="380" height="360" rx="30" fill="url(#hg)"/>
+      <ellipse cx="220" cy="330" rx="120" ry="18" fill="#d4a5c9" opacity=".35"/>
+      <path d="M160 90h120l-14 190H174z" fill="url(#hg2)"/>
+      <path d="M160 90h120l-6 34H166z" fill="#a86b9a"/>
+      <path d="M172 160h96M176 200h88M180 240h80" stroke="#f3e6f0" stroke-width="3" stroke-dasharray="6 7" opacity=".7"/>
+      <circle cx="220" cy="140" r="9" fill="#f3e6f0"/>
+      <path d="M120 110c-16 0-30 12-30 28s14 28 30 28" fill="none" stroke="#a86b9a" stroke-width="3"/>
+      <path d="M320 110c16 0 30 12 30 28s-14 28-30 28" fill="none" stroke="#a86b9a" stroke-width="3"/>
+      <rect x="60" y="300" width="90" height="12" rx="6" fill="#a86b9a" opacity=".55"/>
+      <rect x="290" y="300" width="90" height="12" rx="6" fill="#a86b9a" opacity=".55"/>
+    </svg>
+    <span class="float-tag ft1">尺码对照 2026 版</span>
+    <span class="float-tag ft2">实测 90 天记录</span>
+  </div>
+</section>
+
+<!-- 主布局 -->
+<div class="layout">
+
+  <!-- 左频道 -->
+  <aside class="channel-col" aria-label="频道索引">
+    <h2>频道索引</h2>
+    <ul class="channel-list">
+      <li><a href="/#overview" class="active">束身衣入门</a></li>
+      <li><a href="/#featured">精选实测</a></li>
+      <li><a href="/#updates">最新动态</a></li>
+      <li><a href="/#categories">品类导航</a></li>
+      <li><a href="/#deep">深度解析</a></li>
+      <li><a href="/#guide">选购路径</a></li>
+      <li><a href="/#faq">常见问题</a></li>
+      <li><a href="/#comments">用户评论</a></li>
+      <li><a href="/#news">行业资讯</a></li>
+      <li><a href="/#submit">投稿互动</a></li>
+    </ul>
+  </aside>
+
+  <!-- 中栏 -->
+  <main class="main-col">
+
+    <!-- 1. 主题领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-head">
+        <h2>束身衣到底分哪些方向</h2>
+        <span class="sub">品类 · 材质 · 适用场景</span>
+      </div>
+      <div class="overview">
+        <p>束身衣在日常语境里常被笼统叫成“塑身衣”，实际按结构至少分成 <span class="kw">束腰</span>、<span class="kw">腰封</span>、<span class="kw">连体塑身衣</span>、<span class="kw">高腰束裤</span>、<span class="kw">产后恢复带</span> 五大类。束腰以钢骨或胶骨支撑腰腹，常见 9 骨、17 骨、25 骨；腰封更宽，覆盖肋骨下缘到骨盆上缘，适合外穿叠搭；连体衣从胸下一直包到大腿根部，穿脱依赖肩带和裆部按扣。</p>
+        <p>材质上，2026 年秋冬主流是 <strong>乳胶</strong>、<strong>网纱拼接</strong> 和 <strong>弹力锦纶</strong> 三类。乳胶回弹好但透气性弱，网纱拼接在侧腰做散热区，弹力锦纶轻薄适合初次上身体验。选购时看的不是“紧不紧”，而是压力值分配：腰侧压力通常高于前腹，前腹超过 22 mmHg 的款式日常穿 4 小时以上容易压胃。</p>
+        <p>值得关注的具体方向包括：高腰束裤的提臀结构（2026 年流行“W 型臀杯”剪裁）、产后恢复带的腹直肌分离适配、以及运动束腰在力量训练中的使用边界。站内收录的实测条目中，穿着周期最短为 7 天，最长为 120 天，尺码覆盖 XS 到 3XL。</p>
+      </div>
+    </section>
+
+    <!-- 2. 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-head">
+        <h2>近期值得看的实测条目</h2>
+        <span class="sub">12 条精选 · 含尺码与压力数据</span>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">束腰实测</span><img src="https://picsum.photos/seed/shuyyao01/400/300" alt="高腰束腰真人穿着侧面展示" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">9 骨乳胶束腰 30 天穿着记录</h3>
+            <p class="card-point">每天 5 小时、连续 30 天，腰围从 74cm 到 70.5cm。前 7 天肋骨下缘有压痕，换小一码后压痕消失，记录里附了每日松紧档位。</p>
+            <div class="tag-row"><span class="tag">9骨</span><span class="tag">乳胶</span><span class="tag">30天记录</span></div>
+            <div class="card-meta"><span>更新 11-06</span><span class="hot">热度 9.2</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">腰封</span><img src="https://picsum.photos/seed/yaofeng02/400/300" alt="宽版外穿腰封搭配衬衫" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">宽版外穿腰封叠搭衬衫测评</h3>
+            <p class="card-point">22cm 宽腰封压住衬衫下摆，坐姿时上缘顶到肋骨，站姿正常。适合通勤外穿，不适合久坐办公，实测连续坐 2 小时后需要松一格。</p>
+            <div class="tag-row"><span class="tag">外穿</span><span class="tag">22cm宽</span><span class="tag">通勤</span></div>
+            <div class="card-meta"><span>更新 11-04</span><span class="hot">热度 8.7</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">连体衣</span><img src="https://picsum.photos/seed/lianti03/400/300" alt="网纱拼接连体塑身衣正面细节" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">网纱拼接连体衣夏季透气对比</h3>
+            <p class="card-point">侧腰网纱区面积占 18%，35℃ 室外走 40 分钟，后背出汗量比全乳胶款少约三成。裆部按扣为三排，单手可解。</p>
+            <div class="tag-row"><span class="tag">网纱</span><span class="tag">透气</span><span class="tag">夏季</span></div>
+            <div class="card-meta"><span>更新 11-02</span><span class="hot">热度 8.9</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">产后</span><img src="https://picsum.photos/seed/chanhou04/400/300" alt="产后恢复带分段式结构平铺" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">产后分段式恢复带 90 天使用记录</h3>
+            <p class="card-point">三段粘扣分别对应腹直肌上、中、下段，产后 42 天开始使用，每天 6 小时。第 90 天复查腹直肌分离从 2.5 指到 1 指。</p>
+            <div class="tag-row"><span class="tag">产后</span><span class="tag">分段粘扣</span><span class="tag">90天</span></div>
+            <div class="card-meta"><span>更新 11-05</span><span class="hot">热度 9.5</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">束裤</span><img src="https://picsum.photos/seed/shuku05/400/300" alt="高腰束裤W型臀杯背面结构" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">W 型臀杯高腰束裤提臀角度实测</h3>
+            <p class="card-point">臀杯缝线呈 W 型，坐下时臀下围的布料不上移。和常规 U 型杯对比，站立侧面臀线抬高约 1.2cm，但大腿根压痕更明显。</p>
+            <div class="tag-row"><span class="tag">高腰</span><span class="tag">W型臀杯</span><span class="tag">提臀</span></div>
+            <div class="card-meta"><span>更新 10-30</span><span class="hot">热度 8.4</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">尺码</span><img src="https://picsum.photos/seed/chima06/400/300" alt="束身衣尺码对照表打印件与软尺" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">XS 到 3XL 跨品牌尺码对照</h3>
+            <p class="card-point">同一标称 M 码，A 品牌腰围 66—70cm，B 品牌 70—74cm。对照表按腰围、下胸围、臀围三列并排，附各品牌测量方式差异说明。</p>
+            <div class="tag-row"><span class="tag">尺码</span><span class="tag">对照表</span><span class="tag">跨品牌</span></div>
+            <div class="card-meta"><span>更新 11-07</span><span class="hot">热度 9.1</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">运动</span><img src="https://picsum.photos/seed/yundong07/400/300" alt="运动束腰在力量训练中的佩戴状态" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">运动束腰硬拉佩戴测试</h3>
+            <p class="card-point">硬拉 60kg 做 5 组，束腰下缘卡在髂骨上方，没有卷边。对比专业举重腰带，支撑力低但活动度好，适合 40kg 以下训练。</p>
+            <div class="tag-row"><span class="tag">运动</span><span class="tag">硬拉</span><span class="tag">活动度</span></div>
+            <div class="card-meta"><span>更新 10-28</span><span class="hot">热度 8.2</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">穿搭</span><img src="https://picsum.photos/seed/chuanda08/400/300" alt="束腰外穿搭配高腰西裤造型" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">束腰外穿通勤造型 6 套</h3>
+            <p class="card-point">束腰直接压在衬衫外、西装内，配高腰西裤或半裙。6 套里有 4 套适合 15—22℃ 办公室，2 套需要加薄开衫，附配色表。</p>
+            <div class="tag-row"><span class="tag">外穿</span><span class="tag">通勤</span><span class="tag">配色</span></div>
+            <div class="card-meta"><span>更新 10-26</span><span class="hot">热度 8.6</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">材质</span><img src="https://picsum.photos/seed/caizhi09/400/300" alt="乳胶与弹力锦纶面料拉伸对比" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">乳胶与锦纶面料回弹衰减对比</h3>
+            <p class="card-point">同样穿 60 天，乳胶款腰围回弹保留 94%，锦纶款 87%。乳胶洗后需阴干，暴晒两次后表面出现细裂纹，附保养禁忌。</p>
+            <div class="tag-row"><span class="tag">乳胶</span><span class="tag">锦纶</span><span class="tag">回弹</span></div>
+            <div class="card-meta"><span>更新 10-24</span><span class="hot">热度 8.0</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">腰封</span><img src="https://picsum.photos/seed/yaofeng10/400/300" alt="短款腰封14cm宽度侧面展示" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">14cm 短款腰封小个子适配</h3>
+            <p class="card-point">身高 155cm 穿 22cm 腰封会顶到胸下缘，换成 14cm 后上缘在肋骨中段。短款对腰线分割更明显，但支撑面小，适合日常不搬重物。</p>
+            <div class="tag-row"><span class="tag">短款</span><span class="tag">14cm</span><span class="tag">小个子</span></div>
+            <div class="card-meta"><span>更新 10-22</span><span class="hot">热度 7.9</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">连体衣</span><img src="https://picsum.photos/seed/lianti11/400/300" alt="无痕连体衣领口与肩带细节" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">无痕连体衣穿在紧身针织下效果</h3>
+            <p class="card-point">肩带 1.2cm 宽，穿在薄针织下无凸起。前腹双层布，腰侧单层，弯腰时领口不翻边。浅色款在 300 流明灯光下不透。</p>
+            <div class="tag-row"><span class="tag">无痕</span><span class="tag">紧身针织</span><span class="tag">浅色</span></div>
+            <div class="card-meta"><span>更新 10-20</span><span class="hot">热度 8.3</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-thumb"><span class="card-badge">恢复带</span><img src="https://picsum.photos/seed/huifu12/400/300" alt="骨盆恢复带缠绕式结构使用示意" width="400" height="300" loading="lazy"></div>
+          <div class="card-body">
+            <h3 class="card-title">骨盆恢复带与束裤叠穿顺序</h3>
+            <p class="card-point">先穿骨盆带再套束裤，束裤会压住骨盆带的粘扣边。反过来先束裤后骨盆带，走路 20 分钟骨盆带下滑 3cm。建议二选一，不叠穿。</p>
+            <div class="tag-row"><span class="tag">骨盆带</span><span class="tag">叠穿</span><span class="tag">顺序</span></div>
+            <div class="card-meta"><span>更新 10-18</span><span class="hot">热度 7.7</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. 最新更新 -->
+    <section class="section" id="updates">
+      <div class="section-head">
+        <h2>最新更新与热播动态</h2>
+        <span class="sub">近 14 天 · 条目级更新</span>
+      </div>
+      <div class="news-list">
+        <div class="news-item"><span class="news-date">11-07</span><div class="news-content"><b>高腰束身衣尺码对照表 2026 修订版上线</b><span>新增 3 个品牌的下胸围维度，修正旧版 B 品牌腰围区间 2cm 误差。</span></div><span class="news-tag">尺码</span></div>
+        <div class="news-item"><span class="news-date">11-06</span><div class="news-content"><b>秋冬连体衣 12 款实测合集更新</b><span>补入 3 款加绒连体衣的透气和起球数据，含 5 次水洗后的回弹记录。</span></div><span class="news-tag">连体衣</span></div>
+        <div class="news-item"><span class="news-date">11-05</span><div class="news-content"><b>产后恢复带 90 天记录追加第 3 次复查</b><span>腹直肌分离从 1.5 指收至 1 指，附复查医院和测量手势说明。</span></div><span class="news-tag">产后</span></div>
+        <div class="news-item"><span class="news-date">11-04</span><div class="news-content"><b>宽版腰封外穿测评补充坐姿压痕图</b><span>连续坐 2 小时后上缘压痕位置标出，附松一格的档位对比。</span></div><span class="news-tag">腰封</span></div>
+        <div class="news-item"><span class="news-date">11-02</span><div class="news-content"><b>网纱拼接连体衣透气对比数据修正</b><span>原记录少算了背面网纱区，透气量占比从 15% 修正为 18%。</span></div><span class="news-tag">透气</span></div>
+        <div class="news-item"><span class="news-date">10-30</span><div class="news-content"><b>W 型臀杯束裤新增 U 型杯对照</b><span>同身高体重两人分别穿 W 型和 U 型，侧面臀线抬高差 1.2cm。</span></div><span class="news-tag">束裤</span></div>
+        <div class="news-item"><span class="news-date">10-28</span><div class="news-content"><b>运动束腰硬拉测试补入 40kg 以下组</b><span>40kg 以下 5 组无卷边，60kg 组出现下缘轻微上移。</span></div><span class="news-tag">运动</span></div>
+        <div class="news-item"><span class="news-date">10-26</span><div class="news-content"><b>束腰外穿通勤 6 套造型更新配色表</b><span>新增 15—22℃ 办公室场景，标注每套适合的腰封宽度。</span></div><span class="news-tag">穿搭</span></div>
+        <div class="news-item"><span class="news-date">10-24</span><div class="news-content"><b>乳胶回弹衰减对比补入洗后阴干记录</b><span>乳胶款阴干 60 天保留 94%，暴晒两次后出现裂纹。</span></div><span class="news-tag">材质</span></div>
+        <div class="news-item"><span class="news-date">10-22</span><div class="news-content"><b>14cm 短款腰封小个子适配更新</b><span>155cm 身高穿 22cm 顶胸下缘，14cm 上缘落在肋骨中段。</span></div><span class="news-tag">腰封</span></div>
+        <div class="news-item"><span class="news-date">10-20</span><div class="news-content"><b>无痕连体衣浅色透光测试补 300 流明灯光</b><span>浅色款在 300 流明下不透，500 流明侧光可见轮廓。</span></div><span class="news-tag">连体衣</span></div>
+        <div class="news-item"><span class="news-date">10-18</span><div class="news-content"><b>骨盆带与束裤叠穿顺序更新</b><span>先束裤后骨盆带，走路 20 分钟下滑 3cm，建议二选一。</span></div><span class="news-tag">恢复带</span></div>
+      </div>
+    </section>
+
+    <!-- 4. 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-head">
+        <h2>按品类找内容</h2>
+        <span class="sub">8 个垂类入口</span>
+      </div>
+      <div class="cat-grid">
+        <a href="/#featured" class="cat-item"><span class="cat-icon"><svg viewBox="0 0 24 24"><path d="M8 3h8l-2 18H10z"/><path d="M10 3V1h4v2"/></svg></span><b>束腰</b><span>9骨/17骨/25骨</span></a>
+        <a href="/#featured" class="cat-item"><span class="cat-icon"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="8" rx="2"/><path d="M4 12h16"/></svg></span><b>腰封</b><span>14—22cm 宽</span></a>
+        <a href="/#featured" class="cat-item"><span class="cat-icon"><svg viewBox="0 0 24 24"><path d="M8 2h8v6l-2 14h-4L8 8z"/></svg></span><b>连体衣</b><span>无痕/网纱拼接</span></a>
+        <a href="/#featured" class="cat-item"><span class="cat-icon"><svg viewBox="0 0 24 24"><path d="M6 4h12l-2 16H8z"/><path d="M9 4c0 3 6 3 6 0"/></svg></span><b>高腰束裤</b><span>W型/U型臀杯</span></a>
+        <a href="/#featured" class="cat-item"><span class="cat-icon"><svg viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h6"/></svg></span><b>产后恢复带</b><span>分段粘扣</span></a>
+        <a href="/#featured" class="cat-item"><span class="cat-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><b>运动束腰</b><span>硬拉/深蹲</span></a>
+        <a href="/#featured" class="cat-item"><span class="cat-icon"><svg viewBox="0 0 24 24"><path d="M4 20l4-14h8l4 14z"/><path d="M8 10h8"/></svg></span><b>尺码对照</b><span>XS—3XL</span></a>
+        <a href="/#featured" class="cat-item"><span class="cat-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M8 10h8M8 14h5"/></svg></span><b>材质保养</b><span>乳胶/锦纶</span></a>
+      </div>
+    </section>
+
+    <!-- 5. 深度解析 -->
+    <section class="section" id="deep">
+      <div class="section-head">
+        <h2>束身衣压力分配与选购判断</h2>
+        <span class="sub">材质 · 压力 · 场景三层拆解</span>
+      </div>
+      <div class="deep">
+        <h3>压力值不是越高越好，先看腰侧与前腹的差值</h3>
+        <p>2026 年市售束腰的标称压力多写“中压”“高压”，实际测量按 mmHg 计。我们拆过 14 款束腰的横向压力，前腹压力集中在 14—26 mmHg，腰侧 18—32 mmHg。差值小于 6 mmHg 的款式，收腰视觉不明显；差值超过 14 mmHg，前腹被压得最狠，饭后两小时胃胀反馈集中出现在这个区间。</p>
+        <table class="cmp-table">
+          <tr><th>款式</th><th>前腹压力</th><th>腰侧压力</th><th>差值</th><th>日常 4 小时舒适度</th></tr>
+          <tr><td>A 牌 9 骨乳胶</td><td>18 mmHg</td><td>27 mmHg</td><td>9</td><td>可接受，饭后略胀</td></tr>
+          <tr><td>B 牌 17 骨网纱</td><td>15 mmHg</td><td>30 mmHg</td><td>15</td><td>腰侧压感强，前腹轻松</td></tr>
+          <tr><td>C 牌 25 骨弹力锦纶</td><td>22 mmHg</td><td>24 mmHg</td><td>2</td><td>整体紧，收腰弱</td></tr>
+        </table>
+        <p>一个可直接套用的判断：日常通勤选差值 8—11 mmHg，训练场景才考虑 12 mmHg 以上。差值 2 mmHg 的款式本质是“紧身衣”，不是塑形款，买回来多半吃灰。</p>
+
+        <h3>乳胶、网纱、锦纶的取舍取决于穿着时长</h3>
+        <p>乳胶回弹好，60 天腰围回弹保留 94%，但透气性差。网纱拼接把侧腰 15%—20% 面积换成网眼，35℃ 室外 40 分钟出汗量比全乳胶少三成。锦纶轻薄、价格低，60 天回弹保留 87%，洗 20 次后腰头开始松。</p>
+        <ul>
+          <li>每天穿 2 小时以内：锦纶款够用，轻便。</li>
+          <li>每天 4—6 小时：优先网纱拼接，乳胶只做前腹片。</li>
+          <li>产后或需要长时间支撑：分段粘扣恢复带，压力分散在三条带子上。</li>
+        </ul>
+        <p>乳胶洗后必须阴干，暴晒两次表面出现细裂纹，回弹从 94% 掉到 88%。锦纶可机洗，但要用洗衣袋，直接甩干会让钢骨顶出布面。</p>
+
+        <h3>外穿腰封和内穿束腰的结构差异</h3>
+        <p>腰封宽度 14—22cm，外穿时上缘常顶到肋骨下缘，坐下会硌。14cm 短款对 155cm 身高的用户更友好，上缘落在肋骨中段。内穿束腰窄一些，9—11cm，藏在外衣下不明显，但支撑面小。</p>
+        <p>外穿腰封的搭扣多用金属前扣，单手可解；内穿束腰是排扣，穿脱要两只手。通勤场景里，前扣款在办公室起身时更省事。价格上，22cm 宽腰封普遍比 9 骨束腰贵 80—150 元，贵在钢骨根数和外层皮料。</p>
+
+        <h3>产后恢复带看分段，不看“收腹力度”</h3>
+        <p>产后 42 天开始使用分段粘扣恢复带，三段分别对应腹直肌上、中、下段。90 天记录里，腹直肌分离从 2.5 指收到 1 指。同期用一体式束腰的对照记录，分离从 2.5 指到 1.5 指，差距在下段包裹。</p>
+        <p>恢复带的粘扣边容易被束裤压住，先束裤后恢复带，走路 20 分钟下滑 3cm。二选一穿，或者恢复带贴皮肤、束裤只压大腿根。复查时医生看的是分离指数和腰背疼痛评分，不看腰围数字。</p>
+      </div>
+    </section>
+
+    <!-- 6. 选购路径 -->
+    <section class="section" id="guide">
+      <div class="section-head">
+        <h2>从测量到上身的消费路径</h2>
+        <span class="sub">4 步判断，减少试错</span>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="step-num">1</span><div class="step-body"><b>先量腰围和下胸围，别只看体重</b><p>同一体重下腰围差 6cm 很常见。用软尺贴皮肤量腰最细处，再量下胸围。两个数据对照品牌尺码表，腰围落两档之间时选大一档。</p></div></div>
+        <div class="step"><span class="step-num">2</span><div class="step-body"><b>按每天穿着时长选材质</b><p>2 小时以内锦纶，4—6 小时网纱拼接，长时间支撑选分段恢复带。乳胶只在前腹片用，全乳胶款夏天闷汗。</p></div></div>
+        <div class="step"><span class="step-num">3</span><div class="step-body"><b>确定内穿还是外穿</b><p>藏在外衣下选 9—11cm 窄款排扣；外穿叠搭选 14—22cm 前扣腰封。155cm 身高优先 14cm 短款，坐下不顶肋骨。</p></div></div>
+        <div class="step"><span class="step-num">4</span><div class="step-body"><b>首周每天 2 小时起穿</b><p>第一天穿 2 小时，第二天 3 小时，逐日加。出现胃胀或肋骨下缘明显压痕，松一档或换大一号。第 7 天再判断是否合身。</p></div></div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>常被问到的束身衣问题</h2>
+        <span class="sub">6 个高频问答</span>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>束腰一天最多能穿几个小时？</summary>
+          <div class="faq-answer">日常款建议 4—6 小时，分两段穿，午饭后松开 30 分钟。超过 6 小时前腹压力持续在 20 mmHg 以上，胃胀反馈明显增多。运动束腰只在训练的 40—60 分钟内使用。</div>
+        </details>
+        <details>
+          <summary>产后多久可以穿恢复带？</summary>
+          <div class="faq-answer">顺产一般产后 42 天复查后开始，剖宫产要等伤口完全愈合，多数在产后 6—8 周。开始前确认腹直肌分离指数，2 指以内再上分段粘扣，每天 6 小时起，分三次穿。</div>
+        </details>
+        <details>
+          <summary>9 骨和 17 骨束腰有什么区别？</summary>
+          <div class="faq-answer">钢骨数量决定支撑面和贴合度。9 骨支撑集中在腰侧和后腰，适合日常；17 骨前后都加密，弯腰时不易卷边，适合长时间坐姿或外穿。骨数多不等于压力大，压力看布层和排扣档位。</div>
+        </details>
+        <details>
+          <summary>腰封外穿会不会显得很夸张？</summary>
+          <div class="faq-answer">14—16cm 宽的中短款配衬衫、高腰西裤，视觉上接近宽腰带。22cm 宽款压住衬衫下摆，轮廓更明显，适合叠穿在西装外。颜色选黑、深棕、酒红，比亮色好搭。</div>
+        </details>
+        <details>
+          <summary>乳胶束腰洗后怎么晾？</summary>
+          <div class="faq-answer">冷水手洗，中性洗涤剂，不要拧干。用毛巾吸掉表面水分，平铺阴干，避免暴晒和烘干。暴晒两次后乳胶表面会出现细裂纹，回弹从 94% 掉到 88%。钢骨处不要折叠存放。</div>
+        </details>
+        <details>
+          <summary>束裤和骨盆恢复带可以一起穿吗？</summary>
+          <div class="faq-answer">不建议叠穿。先穿束裤再套骨盆带，走路 20 分钟骨盆带下滑 3cm；反过来，束裤会压住恢复带的粘扣边。二选一，或者恢复带贴皮肤穿，束裤选低腰款避开粘扣位置。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 8. 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-head">
+        <h2>穿过的人怎么说</h2>
+        <span class="sub">16 条真实语气评论</span>
+      </div>
+      <div class="comment-grid">
+        <div class="comment"><div class="comment-head"><span class="avatar">L</span><span class="c-name">林小满</span><span class="c-time">11-07</span></div><p>9 骨乳胶那篇记录太真实了，我前 7 天也是肋骨下缘一道红印，换小一码之后反而好了。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">Z</span><span class="c-name">周五不加班</span><span class="c-time">11-06</span></div><p>22cm 腰封通勤真的坐不住，我坐两小时就得偷偷解开一格，作者说的一样。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">M</span><span class="c-name">Momo酱</span><span class="c-time">11-06</span></div><p>网纱拼接款夏天穿确实凉快，但网纱边缘洗了五次开始起毛球，这点没人提。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">Y</span><span class="c-name">一只圆规</span><span class="c-time">11-05</span></div><p>产后恢复带 90 天记录看哭了，我 42 天开始用，下段粘扣老是往下滑，原来是要先贴皮肤。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">C</span><span class="c-name">陈大锤</span><span class="c-time">11-05</span></div><p>运动束腰硬拉 60kg 那个测试有点意思，40kg 以下确实够用，再重还是得换举重腰带。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">B</span><span class="c-name">不吃香菜</span><span class="c-time">11-04</span></div><p>尺码对照表救了我，A 牌 M 码我穿勒，B 牌 M 码刚好，以前一直以为自己胖了。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">S</span><span class="c-name">苏打水</span><span class="c-time">11-03</span></div><p>无痕连体衣穿紧身针织那段，浅色透光测试说 300 流明不透，我办公室顶灯很亮，还是有点轮廓。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">D</span><span class="c-name">大橘为重</span><span class="c-time">11-02</span></div><p>14cm 短款腰封小个子真的友好，我 153，22cm 那款直接卡在胸下面，换短款舒服多了。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">H</span><span class="c-name">黄昏收集者</span><span class="c-time">11-01</span></div><p>乳胶暴晒出裂纹那个我中招了，晾在阳台三天，现在表面像蛇皮。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">N</span><span class="c-name">南风知我意</span><span class="c-time">10-31</span></div><p>W 型臀杯提臀 1.2cm 有点心动，但大腿根压痕这个缺点也很真实，穿裙子还行，穿紧裤子难受。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">Q</span><span class="c-name">钱多多</span><span class="c-time">10-30</span></div><p>骨盆带和束裤叠穿顺序那个，我试过先束裤，走十分钟就滑到胯上，原来不是我的问题。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">W</span><span class="c-name">王不留行</span><span class="c-time">10-29</span></div><p>17 骨网纱弯腰不卷边，这个我作证，但腰侧压力 30 mmHg 真的紧，午饭后得松一档。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">T</span><span class="c-name">桃桃乌龙</span><span class="c-time">10-28</span></div><p>束腰外穿 6 套里那套酒红配黑西裤我照着穿了，同事说像换了个人，就是坐一天有点累。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">G</span><span class="c-name">郭德纲的票友</span><span class="c-time">10-27</span></div><p>翻了半天没找到加绒连体衣的链接，只有实测数据，不过数据挺细的，先收藏。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">X</span><span class="c-name">小鹿乱撞</span><span class="c-time">10-25</span></div><p>锦纶洗 20 次腰头松，我那条差不多 18 次就开始松，看来不是错觉。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar">A</span><span class="c-name">阿基米德</span><span class="c-time">10-24</span></div><p>压力差值那个表做得好，之前买过差值只有 2 的，穿上去紧是紧，腰没细，白花钱。</p></div>
+      </div>
+    </section>
+
+    <!-- 9. 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-head">
+        <h2>近 30 天相关资讯</h2>
+        <span class="sub">6 条动态 · 含时间与当事方</span>
+      </div>
+      <div class="info-list">
+        <div class="info-item"><div class="info-title">2026 秋冬束身衣展在上海举办，17 家品牌展出分段式结构 <time>11-06</time></div><p class="info-sum">展会 11 月 4 日开幕，持续 3 天，产后恢复带和运动束腰是现场试穿排队最长的两个品类。</p></div>
+        <div class="info-item"><div class="info-title">某检测机构发布束腰压力比较报告，14 款样品中 3 款前腹压力超 25 mmHg <time>11-03</time></div><p class="info-sum">报告共抽检 14 个批次，超压的 3 款均未在标签标注压力值，机构建议购买前向商家索要检测数据。</p></div>
+        <div class="info-item"><div class="info-title">产后康复门诊 10 月接诊量环比上升 18%，腹直肌分离咨询占四成 <time>10-31</time></div><p class="info-sum">北京一家康复门诊的数据显示，10 月接诊 620 人次，其中 248 人次咨询腹直肌分离，恢复带使用姿势是问得最多的问题。</p></div>
+        <div class="info-item"><div class="info-title">网纱拼接连体衣销量环比增长 22%，透气性成为换季选购首因 <time>10-27</time></div><p class="info-sum">电商平台 10 月销售数据显示，网纱款占连体衣总销量的 34%，比 9 月提高 6 个百分点，买家评价里“透气”出现频次最高。</p></div>
+        <div class="info-item"><div class="info-title">运动束腰品牌更新使用警示，建议单次佩戴不超过 60 分钟 <time>10-23</time></div><p class="info-sum">两家国产运动束腰品牌在包装上新增警示语，明确 40kg 以上负重训练应改用专业举重腰带。</p></div>
+        <div class="info-item"><div class="info-title">束身衣尺码标准讨论会召开，跨品牌腰围区间误差成焦点 <time>10-19</time></div><p class="info-sum">会上展示的对照数据显示，同标 M 码的 5 个品牌腰围区间最大差 8cm，讨论组计划 2027 年推出统一测量指引。</p></div>
+      </div>
+    </section>
+
+    <!-- 10. 相关推荐 -->
+    <section class="section" id="related">
+      <div class="section-head">
+        <h2>继续找的方向</h2>
+        <span class="sub">具体条目与品类词</span>
+      </div>
+      <div class="rec-tags">
+        <a href="/#featured">9骨乳胶束腰30天记录</a>
+        <a href="/#featured">22cm外穿腰封通勤测评</a>
+        <a href="/#featured">网纱拼接连体衣透气对比</a>
+        <a href="/#featured">产后分段恢复带90天</a>
+        <a href="/#featured">W型臀杯高腰束裤</a>
+        <a href="/#featured">XS—3XL跨品牌尺码表</a>
+        <a href="/#deep">前腹压力与腰侧差值</a>
+        <a href="/#guide">首周2小时起穿法</a>
+      </div>
+    </section>
+
+    <!-- 11. 补充板块：热度榜 -->
+    <section class="section" id="rank">
+      <div class="section-head">
+        <h2>站内条目热度榜</h2>
+        <span class="sub">按 7 日阅读与收藏计</span>
+      </div>
+      <div class="aside-card">
+        <h3>本周热度前 6</h3>
+        <ul class="rank-list">
+          <li><span class="rank-num">1</span><div><div class="r-title">产后分段式恢复带 90 天使用记录</div><div class="r-meta">热度 9.5 · 收藏 1,208</div></div></li>
+          <li><span class="rank-num">2</span><div><div class="r-title">9 骨乳胶束腰 30 天穿着记录</div><div class="r-meta">热度 9.2 · 收藏 1,046</div></div></li>
+          <li><span class="rank-num">3</span><div><div class="r-title">XS 到 3XL 跨品牌尺码对照</div><div class="r-meta">热度 9.1 · 收藏 986</div></div></li>
+          <li><span class="rank-num">4</span><div><div class="r-title">网纱拼接连体衣夏季透气对比</div><div class="r-meta">热度 8.9 · 收藏 842</div></div></li>
+          <li><span class="rank-num">5</span><div><div class="r-title">宽版外穿腰封叠搭衬衫测评</div><div class="r-meta">热度 8.7 · 收藏 776</div></div></li>
+          <li><span class="rank-num">6</span><div><div class="r-title">束腰外穿通勤造型 6 套</div><div class="r-meta">热度 8.6 · 收藏 703</div></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 投稿互动 -->
+    <section class="section" id="submit">
+      <div class="submit-panel">
+        <div>
+          <h2>有穿着记录想分享？</h2>
+          <p>投稿需要包含：品类、穿着天数、每日时长、尺码和至少 2 个具体体感（压痕位置、透气感受、洗后回弹）。图文均可，站内会整理进对应的品类条目。</p>
+        </div>
+        <a href="/#submit" class="btn btn-light">提交记录</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右辅助栏 -->
+  <aside class="aside-col" aria-label="辅助信息">
+    <div class="aside-card">
+      <h3>今日更新</h3>
+      <ul class="update-list">
+        <li>高腰束身衣尺码对照表 2026 修订版<time>11-07 18:20</time></li>
+        <li>秋冬连体衣 12 款实测合集<time>11-06 14:05</time></li>
+        <li>产后恢复带 90 天记录第 3 次复查<time>11-05 10:42</time></li>
+      </ul>
+    </div>
+    <div class="aside-card">
+      <h3>热门标签</h3>
+      <div class="tag-row">
+        <span class="tag">9骨</span><span class="tag">网纱拼接</span><span class="tag">产后恢复</span>
+        <span class="tag">尺码对照</span><span class="tag">外穿腰封</span><span class="tag">运动束腰</span>
+        <span class="tag">乳胶回弹</span><span class="tag">W型臀杯</span>
+      </div>
+    </div>
+    <div class="aside-card">
+      <h3>尺码速查</h3>
+      <ul class="rank-list">
+        <li><span class="rank-num">XS</span><div><div class="r-title">腰围 58—62cm</div><div class="r-meta">下胸围 66—70cm</div></div></li>
+        <li><span class="rank-num">S</span><div><div class="r-title">腰围 62—66cm</div><div class="r-meta">下胸围 70—74cm</div></div></li>
+        <li><span class="rank-num">M</span><div><div class="r-title">腰围 66—70cm</div><div class="r-meta">下胸围 74—78cm</div></div></li>
+        <li><span class="rank-num">L</span><div><div class="r-title">腰围 70—75cm</div><div class="r-meta">下胸围 78—83cm</div></div></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+<!-- 页尾 -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="f-logo">丽柜美束</div>
+        <p>记录 2024 年至 2026 年 11 月的束身衣实测条目，覆盖束腰、腰封、连体衣、束裤、产后恢复带五类，含 7 天至 120 天穿着周期数据。每周三、周五更新条目，尺码表随品牌调版同步修订。</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>品类</h4>
+          <ul>
+            <li><a href="/#categories">束腰</a></li>
+            <li><a href="/#categories">腰封</a></li>
+            <li><a href="/#categories">连体衣</a></li>
+            <li><a href="/#categories">高腰束裤</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>内容</h4>
+          <ul>
+            <li><a href="/#featured">精选实测</a></li>
+            <li><a href="/#deep">深度解析</a></li>
+            <li><a href="/#guide">选购路径</a></li>
+            <li><a href="/#news">行业资讯</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>互动</h4>
+          <ul>
+            <li><a href="/#submit">投稿记录</a></li>
+            <li><a href="/#comments">用户评论</a></li>
+            <li><a href="/#faq">常见问题</a></li>
+            <li><a href="/#rank">热度榜</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 丽柜美束 · 内容为示例条目与用户投稿，不构成医疗建议</span>
+      <span class="update-note">最近条目更新：2026-11-07 · 尺码对照表 2026 修订版</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+  // 移动端菜单
+  var hamburger = document.getElementById('hamburger');
+  var nav = document.getElementById('mainNav');
+  var overlay = document.getElementById('overlay');
+  function closeNav(){
+    nav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    overlay.classList.remove('show');
+  }
+  function openNav(){
+    nav.classList.add('open');
+    hamburger.setAttribute('aria-expanded','true');
+    overlay.classList.add('show');
+  }
+  hamburger.addEventListener('click', function(){
+    if(nav.classList.contains('open')) closeNav(); else openNav();
+  });
+  overlay.addEventListener('click', closeNav);
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeNav(); closeSearch(); }
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ closeNav(); });
+  });
+
+  // 搜索
+  var searchInput = document.getElementById('searchInput');
+  var searchResult = document.getElementById('searchResult');
+  var indexData = [
+    {t:'9 骨乳胶束腰 30 天穿着记录', id:'featured'},
+    {t:'宽版外穿腰封叠搭衬衫测评', id:'featured'},
+    {t:'网纱拼接连体衣夏季透气对比', id:'featured'},
+    {t:'产后分段式恢复带 90 天使用记录', id:'featured'},
+    {t:'W 型臀杯高腰束裤提臀角度实测', id:'featured'},
+    {t:'XS 到 3XL 跨品牌尺码对照', id:'featured'},
+    {t:'运动束腰硬拉佩戴测试', id:'featured'},
+    {t:'束腰外穿通勤造型 6 套', id:'featured'},
+    {t:'乳胶与锦纶面料回弹衰减对比', id:'featured'},
+    {t:'14cm 短款腰封小个子适配', id:'featured'},
+    {t:'无痕连体衣穿在紧身针织下效果', id:'featured'},
+    {t:'骨盆恢复带与束裤叠穿顺序', id:'featured'},
+    {t:'束身衣压力分配与选购判断', id:'deep'},
+    {t:'从测量到上身的消费路径', id:'guide'},
+    {t:'束腰一天最多能穿几个小时', id:'faq'},
+    {t:'产后多久可以穿恢复带', id:'faq'},
+    {t:'9 骨和 17 骨束腰有什么区别', id:'faq'},
+    {t:'乳胶束腰洗后怎么晾', id:'faq'}
+  ];
+  function closeSearch(){ searchResult.classList.remove('show'); }
+  function renderSearch(q){
+    q = q.trim();
+    if(!q){ closeSearch(); searchResult.innerHTML=''; return; }
+    var hits = indexData.filter(function(item){ return item.t.toLowerCase().indexOf(q.toLowerCase()) > -1; }).slice(0,8);
+    if(hits.length === 0){
+      searchResult.innerHTML = '<div class="empty">没有找到匹配条目，换个关键词试试</div>';
+    } else {
+      searchResult.innerHTML = hits.map(function(h){
+        return '<a href="/#' + h.id + '">' + h.t + '</a>';
+      }).join('');
+    }
+    searchResult.classList.add('show');
+  }
+  searchInput.addEventListener('input', function(){ renderSearch(this.value); });
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ this.value=''; closeSearch(); }
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.search-box')) closeSearch();
+  });
+
+  // 回到顶部
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > window.innerHeight){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  });
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 频道高亮
+  var sections = document.querySelectorAll('main .section');
+  var channelLinks = document.querySelectorAll('.channel-list a');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var id = en.target.id;
+          channelLinks.forEach(function(l){
+            l.classList.toggle('active', l.getAttribute('href') === '/#' + id);
+          });
+        }
+      });
+    }, {rootMargin:'-30% 0px -60% 0px'});
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+
+<!-- 结构化数据 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "丽柜美束",
+  "description": "束身衣与身形管理内容聚合，覆盖束腰、腰封、连体衣、束裤、产后恢复带的选购与实测记录。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "束腰一天最多能穿几个小时？",
+      "acceptedAnswer": { "@type": "Answer", "text": "日常款建议 4—6 小时，分两段穿，午饭后松开 30 分钟。超过 6 小时前腹压力持续在 20 mmHg 以上，胃胀反馈明显增多。运动束腰只在训练 40—60 分钟内使用。" }
+    },
+    {
+      "@type": "Question",
+      "name": "产后多久可以穿恢复带？",
+      "acceptedAnswer": { "@type": "Answer", "text": "顺产一般产后 42 天复查后开始，剖宫产等伤口完全愈合，多数在产后 6—8 周。确认腹直肌分离 2 指以内再上分段粘扣，每天 6 小时，分三次穿。" }
+    },
+    {
+      "@type": "Question",
+      "name": "9 骨和 17 骨束腰有什么区别？",
+      "acceptedAnswer": { "@type": "Answer", "text": "钢骨数量决定支撑面和贴合度。9 骨集中在腰侧和后腰，适合日常；17 骨前后加密，弯腰不易卷边，适合长时间坐姿或外穿。压力大小看布层和排扣档位，不看骨数。" }
+    },
+    {
+      "@type": "Question",
+      "name": "腰封外穿会不会显得很夸张？",
+      "acceptedAnswer": { "@type": "Answer", "text": "14—16cm 中短款配衬衫、高腰西裤接近宽腰带。22cm 宽款压住衬衫下摆，轮廓更明显，适合叠穿在西装外。黑、深棕、酒红比亮色好搭。" }
+    },
+    {
+      "@type": "Question",
+      "name": "乳胶束腰洗后怎么晾？",
+      "acceptedAnswer": { "@type": "Answer", "text": "冷水手洗，中性洗涤剂，不拧干。毛巾吸掉表面水分，平铺阴干，避免暴晒和烘干。暴晒两次乳胶表面出现细裂纹，回弹从 94% 掉到 88%。钢骨处不要折叠存放。" }
+    },
+    {
+      "@type": "Question",
+      "name": "束裤和骨盆恢复带可以一起穿吗？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不建议叠穿。先束裤后骨盆带，走路 20 分钟下滑 3cm；反过来束裤压住恢复带粘扣边。二选一，或恢复带贴皮肤穿，束裤选低腰避开粘扣位置。" }
+    }
+  ]
+}
+</script>
+</body>
+              </html>
